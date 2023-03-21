@@ -22,7 +22,7 @@ public class StatisticsController {
     public String getStatisticsList(Model model) {
         List<StatisticsModel> statisticsModels = statisticService.getAllStatistics();
         model.addAttribute("statisticsModel", statisticsModels);
-        return "statistics/statistics";
+        return "Statistics/Statistics";
     }
     @PostMapping
     public RedirectView postAddStatistics(StatisticsModel statisticsModel) {

@@ -23,7 +23,7 @@ public class EmployeesController {
     public String getEmployeesList(Model model) {
         List<EmployeesModel> employeesModels = employeesService.getAllEmployees();
         model.addAttribute("employeesModel", employeesModels);
-        return "employees/employees";
+        return "Employees/Employees";
     }
     @PostMapping
     public RedirectView postAddEmployees(EmployeesModel employeesModel) {

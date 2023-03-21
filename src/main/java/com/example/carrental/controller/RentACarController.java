@@ -22,7 +22,7 @@ public class RentACarController {
     public String getRentsList(Model model) {
         List<RentModel> rentModels = rentService.getAllRents();
         model.addAttribute("rentModel", rentModels);
-        return "rent/rent";
+        return "RentAcar/RentAcar";
     }
     @PostMapping
     public RedirectView postAddRent(RentModel rentModel) {
