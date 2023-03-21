@@ -20,8 +20,8 @@ public class RentACarController {
     private final RentService rentService;
     @GetMapping
     public String getRentsList(Model model) {
-        List<RentModel> rentACarModels = rentService.getAllRents();
-        model.addAttribute("rentACarModel", rentACarModels);
+        List<RentModel> rentModels = rentService.getAllRents();
+        model.addAttribute("rentModel", rentModels);
         return "rent/rent";
     }
     @PostMapping

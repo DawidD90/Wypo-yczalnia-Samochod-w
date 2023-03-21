@@ -21,7 +21,7 @@ public class StatisticsController {
     @GetMapping
     public String getStatisticsList(Model model) {
         List<StatisticsModel> statisticsModels = statisticService.getAllStatistics();
-        model.addAttribute("rentACarModel", statisticsModels);
+        model.addAttribute("statisticsModel", statisticsModels);
         return "statistics/statistics";
     }
     @PostMapping

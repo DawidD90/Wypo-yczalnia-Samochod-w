@@ -22,8 +22,8 @@ public class HomeController {
 
     @GetMapping
     public String getHomeList(Model model) {
-        List<HomeModel> aboutUsModels = homeService.getAllHome();
-        model.addAttribute("homeModel", aboutUsModels);
+        List<HomeModel> homeModels = homeService.getAllHome();
+        model.addAttribute("homeModel", homeModels);
         return "index";
     }
     @PostMapping
