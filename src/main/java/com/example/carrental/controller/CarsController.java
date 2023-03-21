@@ -1,5 +1,7 @@
 package com.example.carrental.controller;
 
+import com.example.carrental.model.CarsModel;
+import com.example.carrental.service.CarsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +23,7 @@ public class CarsController {
     public String getCarsList(Model model) {
         List<CarsModel> carsModels = carsService.getAllCars();
         model.addAttribute("carsModel", carsModels);
-        return "cars/cars";
+        return "Cars/Cars";
     }
     @PostMapping
     public RedirectView postAddCars(CarsModel carsModel) {

@@ -1,5 +1,7 @@
 package com.example.carrental.controller;
 
+import com.example.carrental.model.EmployeesModel;
+import com.example.carrental.service.EmployeesService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,7 +23,7 @@ public class EmployeesController {
     public String getEmployeesList(Model model) {
         List<EmployeesModel> employeesModels = employeesService.getAllEmployees();
         model.addAttribute("employeesModel", employeesModels);
-        return "employees/employees";
+        return "Employees/Employees";
     }
     @PostMapping
     public RedirectView postAddEmployees(EmployeesModel employeesModel) {
@@ -32,7 +34,7 @@ public class EmployeesController {
 
     @PostMapping("/edit")
     public RedirectView postEditEmployees(EmployeesModel employeesModel) {
-        employeesService.saveEditEmployyes(employeesModel);
+        employeesService.saveEditEmployees(employeesModel);
         return new RedirectView("/employees");
     }
 

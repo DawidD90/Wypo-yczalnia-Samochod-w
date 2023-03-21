@@ -1,5 +1,7 @@
 package com.example.carrental.controller;
 
+import com.example.carrental.model.HomeModel;
+import com.example.carrental.service.HomeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,32 +16,32 @@ import java.util.List;
 @RequiredArgsConstructor
 @Controller
 @RequestMapping("/")
-public class AboutUsController {
+public class HomeController {
 
-    private final AboutUsService aboutUsService;
+    private final HomeService homeService;
 
     @GetMapping
-    public String getAboutList(Model model) {
-        List<AboutUsModel> aboutUsModels = aboutUsService.getAllHome();
-        model.addAttribute("aboutUsModel", aboutUsModels);
+    public String getHomeList(Model model) {
+        List<HomeModel> homeModels = homeService.getAllHome();
+        model.addAttribute("homeModel", homeModels);
         return "index";
     }
     @PostMapping
-    public RedirectView postAddAbout(AboutUsModel aboutUsModel) {
-        aboutUsService.addAbout(aboutUsModel);
+    public RedirectView postAddHome(HomeModel homeModel) {
+        homeService.addHome(homeModel);
         return new RedirectView("/");
     }
 
 
     @PostMapping("/edit")
-    public RedirectView postEditAbout(AboutUsModel aboutUsModel) {
-        aboutUsService.saveEditAbout(aboutUsModel);
+    public RedirectView postEditHome(HomeModel homeModel) {
+        homeService.saveEditHome(homeModel);
         return new RedirectView("/");
     }
 
     @PostMapping("/delete")
-    public RedirectView deleteAbout(@PathVariable("id") Long id) {
-        aboutUsService.deleteAbout(id);
+    public RedirectView deleteHome(@PathVariable("id") Long id) {
+        homeService.deleteHome(id);
         return new RedirectView("/");
     }
 }
