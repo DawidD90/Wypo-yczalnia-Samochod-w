@@ -1,5 +1,7 @@
 package com.example.carrental.controller;
 
+import com.example.carrental.model.StatisticsModel;
+import com.example.carrental.service.StatisticService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,29 +17,29 @@ import java.util.List;
 @Controller
 @RequestMapping("/statistics")
 public class StatisticsController {
-    private final StatisticsService statisticsService;
+    private final StatisticService statisticService;
     @GetMapping
     public String getStatisticsList(Model model) {
-        List<StatisticsModel> statisticsModels = statisticsService.getAllStatistics();
+        List<StatisticsModel> statisticsModels = statisticService.getAllStatistics();
         model.addAttribute("rentACarModel", statisticsModels);
         return "statistics/statistics";
     }
     @PostMapping
-    public RedirectView postAddStatistics(StatisticsModel rentACarModel) {
-        statisticsService.addStatistics(rentACarModel);
+    public RedirectView postAddStatistics(StatisticsModel statisticsModel) {
+        statisticService.addStatistics(statisticsModel);
         return new RedirectView("/statistics");
     }
 
 
     @PostMapping("/edit")
     public RedirectView postEditStatistics(StatisticsModel statisticsModel) {
-        statisticsService.saveEditStatistics(statisticsModel);
+        statisticService.saveEditStatistics(statisticsModel);
         return new RedirectView("/statistics");
     }
 
     @PostMapping("/delete")
     public RedirectView deleteStatistics(@PathVariable("id") Long id) {
-        statisticsService.deleteStatistics(id);
+        statisticService.deleteStatistics(id);
         return new RedirectView("/statistics");
     }
 
