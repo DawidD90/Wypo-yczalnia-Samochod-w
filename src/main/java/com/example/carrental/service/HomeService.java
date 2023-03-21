@@ -21,5 +21,12 @@ public class HomeService {
     public List<HomeModel> getAllHome(){
         return homeRepository.findAll();
     }
+
+    public void saveEditHome(HomeModel editHome) { homeRepository.save(editHome);
+    }
+
+    public void deleteHome(Long id) {
+        homeRepository.deleteById(id);
+    }
 }
 
