@@ -1,6 +1,7 @@
 package com.example.carrental.service;
 
 import com.example.carrental.model.EmployeesModel;
+import com.example.carrental.model.HomeModel;
 import com.example.carrental.model.RentModel;
 import com.example.carrental.repository.EmployeesRepositroy;
 import com.example.carrental.repository.RentRepository;
@@ -22,4 +23,12 @@ public class RentService {
         return rentRepository.findAll();
     }
 
+    public void saveEditRent(RentModel editRent) { rentRepository.save(editRent);
+    }
+
+    public void deleteRent(Long id) {
+        rentRepository.deleteById(id);
+    }
 }
+
+
