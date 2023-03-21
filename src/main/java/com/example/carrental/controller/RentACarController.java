@@ -1,5 +1,7 @@
 package com.example.carrental.controller;
 
+import com.example.carrental.model.RentModel;
+import com.example.carrental.service.RentService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,29 +17,29 @@ import java.util.List;
 @Controller
 @RequestMapping("/rent")
 public class RentACarController {
-    private final RentACarService rentACarService;
+    private final RentService rentService;
     @GetMapping
     public String getRentsList(Model model) {
-        List<RentACarModel> rentACarModels = rentACarService.getAllRents();
-        model.addAttribute("rentACarModel", rentACarModels);
-        return "rent/rent";
+        List<RentModel> rentModels = rentService.getAllRents();
+        model.addAttribute("rentModel", rentModels);
+        return "RentAcar/RentAcar";
     }
     @PostMapping
-    public RedirectView postAddRent(RentACarModel rentACarModel) {
-        rentACarService.addRent(rentACarModel);
+    public RedirectView postAddRent(RentModel rentModel) {
+        rentService.addRent(rentModel);
         return new RedirectView("/rent");
     }
 
 
     @PostMapping("/edit")
-    public RedirectView postEditRent(RentACarModel rentACarModel) {
-        rentACarService.saveEditRent(rentACarModel);
+    public RedirectView postEditRent(RentModel rentModel) {
+        rentService.saveEditRent(rentModel);
         return new RedirectView("/rent");
     }
 
     @PostMapping("/delete")
     public RedirectView deleteRent(@PathVariable("id") Long id) {
-        rentACarService.deleteRent(id);
+        rentService.deleteRent(id);
         return new RedirectView("/rent");
     }
 }
