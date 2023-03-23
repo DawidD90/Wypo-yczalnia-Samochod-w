@@ -9,12 +9,12 @@ import org.springframework.data.annotation.Id;
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
+
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class EmployeesModel {
-
+public class ClientModel {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
@@ -25,9 +25,10 @@ public class EmployeesModel {
     @Column(name = "surname")
     private String surname;
 
-    @Column(name = "Position")
-    private String position;
+    @Column(name = "Email")
+    private String Email;
+    @Column(name = "Address")
+    private String Address;
 
-    @Column(name = "Workplace")
-    private String workplace;
 }
+

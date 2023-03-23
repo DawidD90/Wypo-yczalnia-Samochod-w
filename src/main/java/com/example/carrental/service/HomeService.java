@@ -2,6 +2,7 @@ package com.example.carrental.service;
 
 import com.example.carrental.model.EmployeesModel;
 import com.example.carrental.model.HomeModel;
+import com.example.carrental.model.RentModel;
 import com.example.carrental.repository.EmployeesRepositroy;
 import com.example.carrental.repository.HomeRepository;
 import lombok.RequiredArgsConstructor;
@@ -27,6 +28,9 @@ public class HomeService {
 
     public void deleteHome(Long id) {
         homeRepository.deleteById(id);
+    }
+
+    public void addHome(HomeModel homeModel) {homeRepository.save(homeModel);
     }
 }
 

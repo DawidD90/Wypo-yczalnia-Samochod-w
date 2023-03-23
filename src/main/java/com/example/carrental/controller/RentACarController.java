@@ -20,7 +20,7 @@ public class RentACarController {
     private final RentService rentService;
     @GetMapping
     public String getRentsList(Model model) {
-        List<RentModel> rentModels = rentService.getAllRents();
+        List<RentModel> rentModels = rentService.getAllRent();
         model.addAttribute("rentModel", rentModels);
         return "RentAcar/RentAcar";
     }

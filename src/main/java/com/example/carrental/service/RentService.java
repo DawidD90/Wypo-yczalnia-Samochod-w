@@ -29,6 +29,10 @@ public class RentService {
     public void deleteRent(Long id) {
         rentRepository.deleteById(id);
     }
+
+    public void addRent(RentModel rentModel) {rentRepository.save(rentModel);
+    }
 }
+
 
 
