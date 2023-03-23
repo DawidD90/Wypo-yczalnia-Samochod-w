@@ -26,10 +26,10 @@
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav">
             <li class="nav-item"><a class="nav-link js-scroll-trigger" href='<c:url value="/"/>'>About Us</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href='<c:url value="/experience"/>'>Cars</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href='<c:url value="/education"/>'>Employees</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href='<c:url value="/skills"/>'>Rent a Car</a></li>
-            <li class="nav-item"><a class="nav-link js-scroll-trigger" href='<c:url value="/interests"/>'>Statistics</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href='<c:url value="/cars"/>'>Cars</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href='<c:url value="/employees"/>'>Employees</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href='<c:url value="/rent"/>'>Rent a Car</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href='<c:url value="/statistics"/>'>Statistics</a></li>
         </ul>
     </div>
 </nav>
