@@ -24,9 +24,9 @@ public class EmployeesModel {
     @Column(name = "surname")
     private String surname;
 
-    @Column(name = "Position")
+    @Column(name = "position")
     private String position;
 
-    @Column(name = "Workplace")
+    @Column(name = "workplace")
     private String workplace;
 }

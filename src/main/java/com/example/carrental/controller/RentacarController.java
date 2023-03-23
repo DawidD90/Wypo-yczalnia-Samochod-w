@@ -15,14 +15,14 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Controller
-@RequestMapping("/rent")
-public class RentACarController {
+@RequestMapping("/Rentacar")
+public class RentacarController {
     private final RentService rentService;
     @GetMapping
     public String getRentsList(Model model) {
         List<RentModel> rentModels = rentService.getAllRent();
         model.addAttribute("rentModel", rentModels);
-        return "/rent";
+        return "Rentacar/Rentacar";
     }
     @PostMapping
     public RedirectView postAddRent(RentModel rentModel) {
