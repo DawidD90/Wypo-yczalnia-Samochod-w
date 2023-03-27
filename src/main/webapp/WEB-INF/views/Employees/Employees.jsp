@@ -10,8 +10,16 @@
 
             <section class="resume-section" id="experience">
                 <div class="resume-section-content">
-                    <h2 class="mb-5">Experience</h2>
+                    <h2 class="mb-5">Our Employees</h2>
+                    <c:forEach items="${EmployeesModel}" var="title">
+                        <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                            <div class="flex-grow-1">
+                                <h3 class="mb-0">${title.name}pracownik</h3>
+                                <div class="subheading mb-3">${title.surname}</div>
+                                <p>${title.position}</p>
+                            </div>
 
+                    </c:forEach>
 
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
