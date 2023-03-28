@@ -39,7 +39,7 @@ public class EmployeesController {
         return new RedirectView("/employees");
     }
 
-    @PostMapping("/delete")
+    @PostMapping("/{id}")
     public RedirectView deleteEmployyes(@PathVariable("id") Long id) {
         employeesService.deleteEmployees(id);
         return new RedirectView("/employees");
