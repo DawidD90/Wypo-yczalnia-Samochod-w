@@ -7,7 +7,17 @@
         <!-- Page Content-->
         <div class="container-fluid p-0">
             <!-- Experience-->
+<c:forEach items="${EmployeesModel}" var="title">
+    <tr>
+        <td>imie ${title.name}</td>
+        <td>imie ${title.surname}</td>
+        <td>imie ${title.position}</td>
 
+    </tr>
+
+
+
+</c:forEach>
             <section class="resume-section" id="experience">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Our Employees</h2>

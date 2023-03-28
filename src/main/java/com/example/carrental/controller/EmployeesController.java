@@ -19,10 +19,11 @@ import java.util.List;
 public class EmployeesController {
     private final EmployeesService employeesService;
 
-    @GetMapping
+
+@GetMapping
     public String getEmployeesList(Model model) {
         List<EmployeesModel> employeesModels = employeesService.getAllEmployees();
-        model.addAttribute("employeesModel", employeesModels);
+        model.addAttribute("EmployeesModel", employeesModels);
         return "Employees/Employees";
     }
     @PostMapping
