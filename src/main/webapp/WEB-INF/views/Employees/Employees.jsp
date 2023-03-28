@@ -29,7 +29,7 @@
 
 
                             <div class="container">
-                                <form method="post" action='<c:url value="/education"/>'>
+                                <form method="post" action='<c:url value="/employees"/>'>
                                     <div class="form-group row">
                                         <label class="col-2" for="exampleFormControlInput1">Imie</label>
                                         <div class="col-10">
