@@ -37,7 +37,7 @@ public class StatisticsController {
         return new RedirectView("/statistics");
     }
 
-    @PostMapping("/delete")
+    @PostMapping("/{id}")
     public RedirectView deleteStatistics(@PathVariable("id") Long id) {
         statisticService.deleteStatistics(id);
         return new RedirectView("/statistics");
