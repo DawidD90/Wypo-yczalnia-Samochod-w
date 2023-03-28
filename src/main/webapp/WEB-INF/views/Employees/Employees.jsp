@@ -7,17 +7,7 @@
         <!-- Page Content-->
         <div class="container-fluid p-0">
             <!-- Experience-->
-<c:forEach items="${EmployeesModel}" var="title">
-    <tr>
-        <td>imie ${title.name}</td>
-        <td>imie ${title.surname}</td>
-        <td>imie ${title.position}</td>
 
-    </tr>
-
-
-
-</c:forEach>
             <section class="resume-section" id="experience">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Our Employees</h2>
@@ -29,7 +19,50 @@
                                 <p>${title.position}</p>
                             </div>
 
+                            <!-- Delete Button -->
+                            <form method="post" action='<c:url value="/employees/${title.id}"/>'>
+                                <input type="submit" value="usuń" class="btn btn-danger">
+
+                            </form>
+
                     </c:forEach>
+
+
+                            <div class="container">
+                                <form method="post" action='<c:url value="/education"/>'>
+                                    <div class="form-group row">
+                                        <label class="col-2" for="exampleFormControlInput1">Imie</label>
+                                        <div class="col-10">
+                                            <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="uzupełnij name">
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-2" for="exampleFormControlInput2">Nazwisko</label>
+                                        <div class="col-10">
+                                            <input type="text" class="form-control" id="exampleFormControlInput2" name="surname" placeholder="uzupełnij surname">
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group row">
+                                        <label class="col-2" for="exampleFormControlInput3">position</label>
+                                        <div class="col-10">
+                                            <textarea type="text" class="form-control" rows="5" id="exampleFormControlInput3" name="position" placeholder="uzupełnij position"></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-2" for="exampleFormControlInput3">workplace</label>
+                                        <div class="col-10">
+                                            <textarea type="text" class="form-control" rows="5" id="exampleFormControlInput4" name="workplace" placeholder="uzupełnij workplace"></textarea>
+                                        </div>
+                                    </div>
+
+
+                                    <input type="submit" class="btn btn-success" value="Zapisz">
+                                </form>
+                            </div>
 
                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                         <div class="flex-grow-1">
