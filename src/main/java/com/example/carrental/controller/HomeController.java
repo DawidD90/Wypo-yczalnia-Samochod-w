@@ -39,7 +39,7 @@ public class HomeController {
         return new RedirectView("/");
     }
 
-    @PostMapping("/delete")
+    @PostMapping("/{id}")
     public RedirectView deleteHome(@PathVariable("id") Long id) {
         homeService.deleteHome(id);
         return new RedirectView("/");
