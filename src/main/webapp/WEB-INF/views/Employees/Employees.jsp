@@ -24,9 +24,9 @@
 
 
                 </div>
-                <form method="" action='<c:url value="/employees/${title.id}"/>'>
-                    <input type="submit" value="usuń" class="btn btn-danger">
-                </form>
+<%--                <form method="" action='<c:url value="/employees/${title.id}"/>'>--%>
+<%--                    <input type="submit" value="usuń" class="btn btn-danger">--%>
+<%--                </form>--%>
                 <form method="post" action='<c:url value="/employees/${title.id}"/>'>
                     <input type="submit" value="usuń" class="btn btn-danger">
                 </form>
