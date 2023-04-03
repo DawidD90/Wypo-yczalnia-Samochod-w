@@ -17,12 +17,22 @@ public class RentModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @Column(name = "title")
-    private String title;
+    @Column(name = "name")
+    private String name;
 
-    @Column(name = "sub_title")
-    private String subTitle;
+    @Column(name = "internet domain")
+    private String internetDomain;
 
-    @Column(name = "description")
-    private String description;
+    @Column(name = "phone_number")
+    private String phoneNumber;
+
+    @Column(name = "owner")
+    private String owner;
+
+    @Column(name = "logotype")
+    private String logotype;
+
+    @Column(name = "branches")
+    private String branches;
+
 }
