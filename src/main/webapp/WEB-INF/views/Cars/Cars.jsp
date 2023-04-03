@@ -13,14 +13,14 @@
 <c:forEach items="${carsModel}" var="title">
             <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                 <div class="flex-grow-1">
-                    <h3 class="mb-0">${title.make}</h3>
-                    <div class="subheading mb-3">${title.model}</div>
-                    <div class="subheading mb-3">${title.bodyType}</div>
-                    <div class="subheading mb-3">${title.productionYear}</div>
-                    <div class="subheading mb-3">${title.color}</div>
-                    <div class="subheading mb-3">${title.mileage}</div>
-                    <div class="subheading mb-3">${title.status}</div>
-                    <div class="subheading mb-3">${title.price}</div>
+                    <h3 class="mb-0">Marka: ${title.make}</h3>
+                    <div class="subheading mb-3">Model: ${title.model}</div>
+                    <div class="subheading mb-3">Typ nadwozia: ${title.bodyType}</div>
+                    <div class="subheading mb-3">Rok produkcji: ${title.productionYear}</div>
+                    <div class="subheading mb-3">Kolor: ${title.color}</div>
+                    <div class="subheading mb-3">Przebieg: ${title.mileage}</div>
+                    <div class="subheading mb-3">Status: ${title.status}</div>
+                    <div class="subheading mb-3">Cena: ${title.price}</div>
                 </div>
                 <!-- Delete Button -->
                 <form method="post" action='<c:url value="/cars/${title.id}"/>'>
