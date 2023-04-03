@@ -38,7 +38,7 @@ public class CarsController {
         return new RedirectView("/cars");
     }
 
-    @PostMapping("/delete")
+    @PostMapping("/{id}")
     public RedirectView deleteCars(@PathVariable("id") Long id) {
         carsService.deleteCars(id);
         return new RedirectView("/cars");

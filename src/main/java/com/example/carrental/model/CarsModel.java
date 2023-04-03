@@ -26,19 +26,19 @@ public class CarsModel {
     @Column(name = "bodyType")
     private String bodyType;
 
-    @Column(name = "ProductionYear")
-    private String ProductionYear;
+    @Column(name = "productionYear")
+    private String productionYear;
 
-    @Column(name = "Color")
-    private String Color;
+    @Column(name = "color")
+    private String color;
 
-    @Column(name = "Mileage")
-    private String Mileage;
+    @Column(name = "mileage")
+    private String mileage;
 
 //tu można enuma zrobić
-    @Column(name = "Status")
-    private String Status;
+    @Column(name = "status")
+    private String status;
 
-    @Column(name = "Price")
-    private String Price;
+    @Column(name = "price")
+    private String price;
 }
