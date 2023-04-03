@@ -43,44 +43,18 @@
 <%--                </form>--%>
 
 
-
-            <section3>
-                <div class="container">
-                    <form method="post" action='<c:url value="/employees"/>'>
-                        <div class="form-group row">
-                            <label class="col-2" for="exampleFormControlInput1">Imie</label>
-                            <div class="col-10">
-                                <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="uzupełnij name">
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label class="col-2" for="exampleFormControlInput2">Nazwisko</label>
-                            <div class="col-10">
-                                <input type="text" class="form-control" id="exampleFormControlInput2" name="surname" placeholder="uzupełnij surname">
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label class="col-2" for="exampleFormControlInput3">position</label>
-                            <div class="col-10">
-                                <textarea type="text" class="form-control" rows="5" id="exampleFormControlInput3" name="position" placeholder="uzupełnij position"></textarea>
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label class="col-2" for="exampleFormControlInput3">workplace</label>
-                            <div class="col-10">
-                                <textarea type="text" class="form-control" rows="5" id="exampleFormControlInput4" name="workplace" placeholder="uzupełnij workplace"></textarea>
-                            </div>
-                        </div>
+    <div class="card-header py-3">
 
 
-                        <input type="submit" class="btn btn-success" value="Zapisz">
-                    </form>
-                </div>
-            </section3>
+        <a href='<c:url value="/employees/addEmployee"/>' class="btn btn-info btn-icon-split">
+                    <span class="icon text-white-50">
+                      <i class="fas fa-info-circle"></i>
+                    </span>
+            <span class="text">Dodaj nowego</span>
+        </a>
 
+
+    </div>
 
 
 </div>

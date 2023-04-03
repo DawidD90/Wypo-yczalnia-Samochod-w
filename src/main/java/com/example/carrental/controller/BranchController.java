@@ -22,20 +22,12 @@ import java.util.List;
 public class BranchController {
 
     private final BranchService branchService;
-    private final EmployeesService employeesService;
 
 
 @GetMapping
     public String getBranchList(Model model) {
         List<BranchModel> branchModels = branchService.getAllBranch();
         model.addAttribute("branchModel", branchModels);
-        return "Branches/Branches";
-    }
-
-    @GetMapping("/addEmployees")
-    public String getAddEmployee(Model model) {
-        List<EmployeesModel> list = employeesService.getAllEmployees();
-        model.addAttribute("employeesModel", list);
         return "Branches/Branches";
     }
 
