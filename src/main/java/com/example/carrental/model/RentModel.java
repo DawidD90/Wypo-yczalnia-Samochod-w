@@ -20,7 +20,7 @@ public class RentModel {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "internet domain")
+    @Column(name = "internet_domain")
     private String internetDomain;
 
     @Column(name = "phone_number")

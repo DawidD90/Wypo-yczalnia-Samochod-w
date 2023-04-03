@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -19,8 +21,8 @@ public class BranchModel {
     @Column(name = "address")
     private String address;
 
-    @Column(name = "employees")
-    private String employees;
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "branchModel")
+    private Set<EmployeesModel> employees = new HashSet<>();
 
     @Column(name = "available_cars")
     private String availableCars;

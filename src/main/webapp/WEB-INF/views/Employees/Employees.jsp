@@ -19,7 +19,7 @@
                 <div class="flex-grow-1">
                     <h3 class="mb-0">${title.name}  ${title.surname}</h3>
                     <div class="subheading mb-3">${title.position}</div>
-                    <p>${title.workplace}</p>
+                    <p>${title.branchModel.address}</p>
 
 
 

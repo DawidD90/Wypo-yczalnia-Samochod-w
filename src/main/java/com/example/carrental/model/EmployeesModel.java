@@ -28,6 +28,10 @@ public
     @Column(name = "position")
     private String position;
 
-    @Column(name = "workplace")
-    private String workplace;
+
+   @ManyToOne
+   @JoinColumn(name = "branchModel_id")
+   private BranchModel branchModel;
+
+
 }
