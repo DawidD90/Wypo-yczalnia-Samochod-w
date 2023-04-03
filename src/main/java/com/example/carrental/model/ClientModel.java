@@ -24,9 +24,9 @@ public class ClientModel {
     @Column(name = "surname")
     private String surname;
 
-    @Column(name = "Email")
+    @Column(name = "email")
     private String Email;
-    @Column(name = "Address")
+    @Column(name = "address")
     private String Address;
 
 }
