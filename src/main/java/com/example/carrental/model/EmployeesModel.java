@@ -12,8 +12,8 @@ import javax.persistence.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public
- class EmployeesModel {
+
+public class EmployeesModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
