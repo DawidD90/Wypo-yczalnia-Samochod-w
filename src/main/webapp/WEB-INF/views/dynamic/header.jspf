@@ -30,6 +30,7 @@
             <li class="nav-item"><a class="nav-link js-scroll-trigger" href='<c:url value="/employees"/>'>Employees</a></li>
             <li class="nav-item"><a class="nav-link js-scroll-trigger" href='<c:url value="/Rentacar"/>'>Rent a Car</a></li>
             <li class="nav-item"><a class="nav-link js-scroll-trigger" href='<c:url value="/statistics"/>'>Statistics</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href='<c:url value="/client"/>'>Clients</a></li>
         </ul>
     </div>
 </nav>
