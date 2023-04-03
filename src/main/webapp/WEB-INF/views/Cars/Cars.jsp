@@ -15,12 +15,12 @@
                 <div class="flex-grow-1">
                     <h3 class="mb-0">Marka: ${title.make}</h3>
                     <div class="subheading mb-3">Model: ${title.model}</div>
-                    <div class="subheading mb-3">Typ nadwozia: ${title.bodyType}</div>
-                    <div class="subheading mb-3">Rok produkcji: ${title.productionYear}</div>
-                    <div class="subheading mb-3">Kolor: ${title.color}</div>
-                    <div class="subheading mb-3">Przebieg: ${title.mileage}</div>
-                    <div class="subheading mb-3">Status: ${title.status}</div>
-                    <div class="subheading mb-3">Cena: ${title.price}</div>
+                    <div class="subheading mb-3">Body Type: ${title.bodyType}</div>
+                    <div class="subheading mb-3">Production Year: ${title.productionYear}</div>
+                    <div class="subheading mb-3">Color: ${title.color}</div>
+                    <div class="subheading mb-3">Mileage: ${title.mileage} km</div>
+<%--                    <div class="subheading mb-3">Status: ${title.status}</div>--%>
+                    <div class="subheading mb-3">Price: ${title.price}</div>
                 </div>
                 <!-- Delete Button -->
                 <form method="post" action='<c:url value="/cars/${title.id}"/>'>
@@ -36,56 +36,56 @@
     <div class="container">
         <form method="post" action='<c:url value="/cars"/>'>
             <div class="form-group row">
-                <label class="col-2" for="exampleFormControlInput1">Marka</label>
+                <label class="col-2" for="exampleFormControlInput1">Make</label>
                 <div class="col-10">
-                    <input type="text" class="form-control" id="exampleFormControlInput1" name="make" placeholder="podaj markę pojazdu">
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="make" placeholder="Please provide make of the car">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-2" for="exampleFormControlInput2">Model</label>
                 <div class="col-10">
-                    <input type="text" class="form-control" id="exampleFormControlInput2" name="model" placeholder="podaj model pojazdu">
+                    <input type="text" class="form-control" id="exampleFormControlInput2" name="model" placeholder="Please provide model of the car">
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-2" for="exampleFormControlInput3">Rodzaj nadwozia</label>
+                <label class="col-2" for="exampleFormControlInput3">Body Type</label>
                 <div class="col-10">
-                    <input type="text" class="form-control" id="exampleFormControlInput3" name="bodyType" placeholder="podaj rodzaj nadwozia pojazdu">
+                    <input type="text" class="form-control" id="exampleFormControlInput3" name="bodyType" placeholder="please provide body type">
                 </div>
             </div>
 
             <div class="form-group row">
-                <label class="col-2" for="exampleFormControlInput4">Rok produkcji</label>
+                <label class="col-2" for="exampleFormControlInput4">Production Year</label>
                 <div class="col-10">
-                    <input type="text" class="form-control" id="exampleFormControlInput4" name="ProductionYear" placeholder="podaj rok produkcji pojazdu">
+                    <input type="text" class="form-control" id="exampleFormControlInput4" name="ProductionYear" placeholder="please provide production year">
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-2" for="exampleFormControlInput5">Kolor</label>
+                <label class="col-2" for="exampleFormControlInput5">Color</label>
                 <div class="col-10">
-                    <input type="text" class="form-control" id="exampleFormControlInput5" name="Color" placeholder="podaj kolor pojazdu">
+                    <input type="text" class="form-control" id="exampleFormControlInput5" name="Color" placeholder="please provide color">
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-2" for="exampleFormControlInput6">Przebieg</label>
+                <label class="col-2" for="exampleFormControlInput6">Mileage</label>
                 <div class="col-10">
-                    <input type="text" class="form-control" id="exampleFormControlInput6" name="Mileage" placeholder="podaj przebieg pojazdu">
+                    <input type="text" class="form-control" id="exampleFormControlInput6" name="Mileage" placeholder="please provide mileage">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-2" for="exampleFormControlInput7">Status</label>
                 <div class="col-10">
-                    <input type="text" class="form-control" id="exampleFormControlInput7" name="Status" placeholder="podaj status pojazdu">
+                    <input type="text" class="form-control" id="exampleFormControlInput7" name="Status" placeholder="please provide status">
                 </div>
             </div>
             <div class="form-group row">
-                <label class="col-2" for="exampleFormControlInput8">Cena</label>
+                <label class="col-2" for="exampleFormControlInput8">Price</label>
                 <div class="col-10">
-                    <input type="text" class="form-control" id="exampleFormControlInput8" name="Price" placeholder="podaj cenę pojazdu">
+                    <input type="text" class="form-control" id="exampleFormControlInput8" name="Price" placeholder="please provide rental fee">
                 </div>
             </div>
 
-            <input type="submit" class="btn btn-success" value="Zapisz">
+            <input type="submit" class="btn btn-success" value="Save">
         </form>
 
 
