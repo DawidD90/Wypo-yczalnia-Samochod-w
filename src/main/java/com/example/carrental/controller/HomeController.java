@@ -1,6 +1,8 @@
 package com.example.carrental.controller;
 
+import com.example.carrental.model.BranchModel;
 import com.example.carrental.model.HomeModel;
+import com.example.carrental.service.BranchService;
 import com.example.carrental.service.HomeService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -20,10 +22,14 @@ public class HomeController {
 
     private final HomeService homeService;
 
+    private final BranchService branchService;
+
     @GetMapping
     public String getHomeList(Model model) {
         List<HomeModel> homeModels = homeService.getAllHome();
         model.addAttribute("homeModel", homeModels);
+        List<BranchModel> branchModels = branchService.getAllBranch();
+        model.addAttribute("branchModel", branchModels);
         return "index";
     }
     @PostMapping
