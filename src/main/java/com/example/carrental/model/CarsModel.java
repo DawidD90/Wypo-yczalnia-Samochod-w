@@ -37,8 +37,10 @@ public class CarsModel {
 
 //tu można enuma zrobić
     @Column(name = "status")
-    private String status;
+    private CarStatus carStatus;
 
     @Column(name = "price")
     private String price;
+
+
 }
