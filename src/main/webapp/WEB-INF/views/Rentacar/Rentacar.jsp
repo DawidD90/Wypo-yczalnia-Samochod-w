@@ -6,9 +6,11 @@
         <!-- Page Content-->
         <div class="container-fluid p-0">
             <!-- Interests-->
-            <section class="resume-section" id="interests">
+            <section class="resume-section" id="rentACar">
                 <div class="resume-section-content">
-                    <h1 class="mb-5">Interests</h1>
+                    <h1 class="mb-5">Rent a car</h1>
+
+
 
                 </div>
             </section>

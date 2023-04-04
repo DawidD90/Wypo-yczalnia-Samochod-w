@@ -7,7 +7,7 @@
         <!-- Page Content-->
         <div class="container-fluid p-0">
             <!-- Skills-->
-            <section class="resume-section" id="skills">
+            <section class="resume-section" id="statistic">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Skills</h2>
                     <div class="subheading mb-3">Programming Languages & Tools</div>
