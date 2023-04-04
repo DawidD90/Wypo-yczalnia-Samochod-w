@@ -1,14 +1,12 @@
 package com.example.carrental.controller;
 
+import com.example.carrental.model.CarStatus;
 import com.example.carrental.model.CarsModel;
 import com.example.carrental.service.CarsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
@@ -23,10 +21,11 @@ public class CarsController {
     public String getCarsList(Model model) {
         List<CarsModel> carsModels = carsService.getAllCars();
         model.addAttribute("carsModel", carsModels);
+        model.addAttribute("carStatus", CarStatus.values());
         return "Cars/Cars";
     }
     @PostMapping
-    public RedirectView postAddCars(CarsModel carsModel) {
+    public RedirectView postAddCars(@RequestBody CarsModel carsModel) {
         carsService.addCars(carsModel);
         return new RedirectView("/cars");
     }
