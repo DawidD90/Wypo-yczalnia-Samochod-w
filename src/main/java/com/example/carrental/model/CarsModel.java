@@ -41,4 +41,5 @@ public class CarsModel {
 
     @Column(name = "price")
     private String price;
+
 }
