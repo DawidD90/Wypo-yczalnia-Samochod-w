@@ -7,7 +7,7 @@
 <!-- Page Content-->
 <div class="container-fluid p-0">
     <!-- Cars-->
-    <section class="resume-section" id="education">
+    <section class="resume-section" id="cars">
         <div class="resume-section-content">
             <h2 class="mb-5">Cars</h2>
 <c:forEach items="${carsModel}" var="title">
@@ -19,7 +19,7 @@
                     <div class="subheading mb-3">Production Year: ${title.productionYear}</div>
                     <div class="subheading mb-3">Color: ${title.color}</div>
                     <div class="subheading mb-3">Mileage: ${title.mileage} km</div>
-<                   <div class="subheading mb-3">Status: ${title.carStatus}</div>
+                    <div class="subheading mb-3">Status: ${title.carStatus}</div>
                     <div class="subheading mb-3">Price: ${title.price}</div>
                 </div>
                 <!-- Delete Button -->
