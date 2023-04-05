@@ -39,7 +39,7 @@ public class ReservationModel {
     @Column(name = "reservation_to")
     private Date reservationTo;
     @Column(name = "rent_branch")
-    private String rentBranch;
+    private String Branchmodel;
     @Column(name = "return_branch")
     private String returnBranch;
 

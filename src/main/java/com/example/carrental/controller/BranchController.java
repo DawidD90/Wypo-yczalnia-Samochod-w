@@ -24,6 +24,7 @@ public class BranchController {
     private final BranchService branchService;
 
 
+
 @GetMapping
     public String getBranchList(Model model) {
         List<BranchModel> branchModels = branchService.getAllBranch();

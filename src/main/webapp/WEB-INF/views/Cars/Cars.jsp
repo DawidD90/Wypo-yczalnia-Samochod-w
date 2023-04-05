@@ -6,8 +6,8 @@
 
 <!-- Page Content-->
 <div class="container-fluid p-0">
-    <!-- Education-->
-    <section class="resume-section" id="education">
+    <!-- Cars-->
+    <section class="resume-section" id="cars">
         <div class="resume-section-content">
             <h2 class="mb-5">Cars</h2>
 <c:forEach items="${carsModel}" var="title">
@@ -19,7 +19,7 @@
                     <div class="subheading mb-3">Production Year: ${title.productionYear}</div>
                     <div class="subheading mb-3">Color: ${title.color}</div>
                     <div class="subheading mb-3">Mileage: ${title.mileage} km</div>
-<%--                    <div class="subheading mb-3">Status: ${title.status}</div>--%>
+                    <div class="subheading mb-3">Status: ${title.carStatus}</div>
                     <div class="subheading mb-3">Price: ${title.price}</div>
                 </div>
                 <!-- Delete Button -->
@@ -57,31 +57,41 @@
             <div class="form-group row">
                 <label class="col-2" for="exampleFormControlInput4">Production Year</label>
                 <div class="col-10">
-                    <input type="text" class="form-control" id="exampleFormControlInput4" name="ProductionYear" placeholder="please provide production year">
+                    <input type="text" class="form-control" id="exampleFormControlInput4" name="productionYear" placeholder="please provide production year">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-2" for="exampleFormControlInput5">Color</label>
                 <div class="col-10">
-                    <input type="text" class="form-control" id="exampleFormControlInput5" name="Color" placeholder="please provide color">
+                    <input type="text" class="form-control" id="exampleFormControlInput5" name="color" placeholder="please provide color">
                 </div>
             </div>
             <div class="form-group row">
                 <label class="col-2" for="exampleFormControlInput6">Mileage</label>
                 <div class="col-10">
-                    <input type="text" class="form-control" id="exampleFormControlInput6" name="Mileage" placeholder="please provide mileage">
+                    <input type="text" class="form-control" id="exampleFormControlInput6" name="mileage" placeholder="please provide mileage">
                 </div>
             </div>
+
             <div class="form-group row">
-                <label class="col-2" for="exampleFormControlInput7">Status</label>
+                <label class="col-2 col-form-label">Status</label>
                 <div class="col-10">
-                    <input type="text" class="form-control" id="exampleFormControlInput7" name="Status" placeholder="please provide status">
+                    <select class="form-control" name="carsModel.id">
+                        <option hidden>wybierz</option>
+                        <c:forEach items="${carStatus}" var="example">
+                            <option value="${example}">${example}</option>
+                        </c:forEach>
+                    </select>
                 </div>
             </div>
+
+
+
+
             <div class="form-group row">
                 <label class="col-2" for="exampleFormControlInput8">Price</label>
                 <div class="col-10">
-                    <input type="text" class="form-control" id="exampleFormControlInput8" name="Price" placeholder="please provide rental fee">
+                    <input type="text" class="form-control" id="exampleFormControlInput8" name="price" placeholder="please provide rental fee">
                 </div>
             </div>
 

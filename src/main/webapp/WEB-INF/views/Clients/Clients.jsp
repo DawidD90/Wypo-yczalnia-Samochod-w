@@ -8,7 +8,7 @@
         <div class="container-fluid p-0">
             <!-- Experience-->
 
-            <section class="resume-section" id="experience">
+            <section class="resume-section" id="clients">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Our Clients</h2>
                     <c:forEach items="${clientModel}" var="title">
