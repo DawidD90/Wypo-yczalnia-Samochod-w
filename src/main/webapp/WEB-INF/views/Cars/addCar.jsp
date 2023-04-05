@@ -33,19 +33,6 @@
         </div>
     </section>
 
-    <div class="card-header py-3">
-
-
-        <a href='<c:url value="/cars/addCar"/>' class="btn btn-info btn-icon-split">
-                    <span class="icon text-white-50">
-                      <i class="fas fa-info-circle"></i>
-                    </span>
-            <span class="text">Add new car</span>
-        </a>
-
-
-    </div>
-
     <div class="container">
         <form method="post" action='<c:url value="/cars"/>'>
             <div class="form-group row">
@@ -83,6 +70,18 @@
                 <label class="col-2" for="exampleFormControlInput6">Mileage</label>
                 <div class="col-10">
                     <input type="text" class="form-control" id="exampleFormControlInput6" name="mileage" placeholder="please provide mileage">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Wybierz oddział</label>
+                <div class="col-10">
+                    <select class="form-control" name="branchModel.id">
+                        <option hidden>wybierz</option>
+                        <c:forEach items="${branchModel}" var="example">
+                            <option value="${example.id}">${example.address}</option>
+                        </c:forEach>
+                    </select>
                 </div>
             </div>
 

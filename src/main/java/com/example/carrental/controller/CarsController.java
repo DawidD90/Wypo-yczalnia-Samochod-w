@@ -1,7 +1,10 @@
 package com.example.carrental.controller;
 
+import com.example.carrental.model.BranchModel;
 import com.example.carrental.model.CarStatus;
 import com.example.carrental.model.CarsModel;
+import com.example.carrental.model.EmployeesModel;
+import com.example.carrental.service.BranchService;
 import com.example.carrental.service.CarsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -17,6 +20,8 @@ import java.util.List;
 public class CarsController {
     private final CarsService carsService;
 
+    private final BranchService branchService;
+
     @GetMapping
     public String getCarsList(Model model) {
         List<CarsModel> carsModels = carsService.getAllCars();
@@ -27,6 +32,18 @@ public class CarsController {
     @PostMapping
     public RedirectView postAddCars(@RequestBody CarsModel carsModel) {
         carsService.addCars(carsModel);
+        return new RedirectView("/cars");
+    }
+    @GetMapping("/addCar")
+    public String getAddCar(Model model) {
+        List<BranchModel> list = branchService.getAllBranch();
+        model.addAttribute("branchModel", list);
+        model.addAttribute("carStatus", CarStatus.values());
+        return "Cars/addCar";
+    }
+    @PostMapping("/addCar")
+    public RedirectView postAddCar(CarsModel car) {
+        carsService.addCars(car);
         return new RedirectView("/cars");
     }
 
