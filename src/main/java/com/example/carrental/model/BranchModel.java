@@ -24,7 +24,7 @@ public class BranchModel {
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, mappedBy = "branchModel")
     private Set<EmployeesModel> employees = new HashSet<>();
 
-    @Column(name = "available_cars")
-    private String availableCars;
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, mappedBy = "branchModel")
+    private Set<CarsModel> availableCars = new HashSet<>();
 
 }
