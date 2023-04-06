@@ -36,8 +36,13 @@ public class CarsModel {
     private String mileage;
 
 //tu można enuma zrobić
+    @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private CarStatus carStatus;
+
+    @ManyToOne
+    @JoinColumn(name = "BranchModel_id")
+    private BranchModel branchModel;
 
     @Column(name = "price")
     private String price;

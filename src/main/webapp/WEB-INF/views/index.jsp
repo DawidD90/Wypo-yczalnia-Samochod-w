@@ -20,7 +20,7 @@
                         <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                             <div class="flex-grow-1">
                                 <h3 class="mb-0">Branch address: ${title.address}</h3>
-                                <div class="subheading mb-3">Cars available in branch: ${title.availableCars}</div>
+
 
                             </div>
 

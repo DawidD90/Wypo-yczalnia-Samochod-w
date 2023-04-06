@@ -4,37 +4,9 @@
 <%@include file="../dynamic/header.jspf" %>
 
 
-<!-- Page Content-->
-<div class="container-fluid p-0">
-    <!-- Cars-->
-    <section class="resume-section" id="cars">
-        <div class="resume-section-content">
-            <h2 class="mb-5">Cars</h2>
-<c:forEach items="${CarsModel}" var="title">
-            <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                <div class="flex-grow-1">
-                    <h3 class="mb-0">Marka: ${title.make}</h3>
-                    <div class="subheading mb-3">Model: ${title.model}</div>
-                    <div class="subheading mb-3">Body Type: ${title.bodyType}</div>
-                    <div class="subheading mb-3">Production Year: ${title.productionYear}</div>
-                    <div class="subheading mb-3">Color: ${title.color}</div>
-                    <div class="subheading mb-3">Mileage: ${title.mileage} km</div>
-                    <div class="subheading mb-3">Status: ${title.carStatus}</div>
-                    <div class="subheading mb-3">Price: ${title.price}</div>
-                </div>
-                <!-- Delete Button -->
-                <form method="post" action='<c:url value="/cars/${title.id}"/>'>
-                    <input type="submit" value="usuń" class="btn btn-danger">
-                </form>
-
-            </div>
-
-</c:forEach>
-        </div>
-    </section>
-
+    <section>
     <div class="container">
-        <form method="post" action='<c:url value="/cars"/>'>
+        <form method="post" action='<c:url value="/cars/addCar"/>'>
             <div class="form-group row">
                 <label class="col-2" for="exampleFormControlInput1">Make</label>
                 <div class="col-10">
@@ -74,6 +46,18 @@
             </div>
 
             <div class="form-group row">
+                <label class="col-2 col-form-label">Status</label>
+                <div class="col-10">
+                    <select class="form-control" name="carStatus">
+                        <option hidden>wybierz</option>
+                        <c:forEach items="${carStatus}" var="example">
+                            <option value="${example}">${example}</option>
+                        </c:forEach>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group row">
                 <label class="col-2 col-form-label">Wybierz oddział</label>
                 <div class="col-10">
                     <select class="form-control" name="branchModel.id">
@@ -85,25 +69,12 @@
                 </div>
             </div>
 
-            <div class="form-group row">
-                <label class="col-2 col-form-label">Status</label>
-                <div class="col-10">
-                    <select class="form-control" name="carsModel.id">
-                        <option hidden>wybierz</option>
-                        <c:forEach items="${carStatus}" var="example">
-                            <option value="${example}">${example}</option>
-                        </c:forEach>
-                    </select>
-                </div>
-            </div>
-
-
-
 
             <div class="form-group row">
-                <label class="col-2" for="exampleFormControlInput8">Price</label>
+                <label class="col-2" for="exampleFormControlInput7">Price</label>
                 <div class="col-10">
-                    <input type="text" class="form-control" id="exampleFormControlInput8" name="price" placeholder="please provide rental fee">
+                    <input type="text" class="form-control" id="exampleFormControlInput7"
+                           name="price" placeholder="please provide rental fee">
                 </div>
             </div>
 
@@ -112,7 +83,13 @@
 
 
     </div>
-
+    </section>
 
 
 </div>
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+</body>
+</html>
