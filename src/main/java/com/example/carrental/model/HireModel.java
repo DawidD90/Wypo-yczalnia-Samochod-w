@@ -20,6 +20,7 @@ public class HireModel {
     Long id;
     @Column(name = "employee")
     private String employee;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "rent_date")
     private Date rentDate;

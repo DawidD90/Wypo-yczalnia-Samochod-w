@@ -39,4 +39,7 @@ public class ReturnModel {
     @JoinColumn(name = "EmployeesModel_id")
     private EmployeesModel employeesModel;
 
+    @OneToOne(mappedBy = "returnModel")
+    private ReservationModel reservationModel;
+
 }

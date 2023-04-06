@@ -53,9 +53,16 @@ public class ReservationModel {
     @JoinColumn(name = "CarsModel_id")
     private CarsModel carsModel;
 
-@ManyToOne
-@JoinColumn(name = "ClientModel_id")
-private ClientModel clientModel;
+    @ManyToOne
+    @JoinColumn(name = "ClientModel_id")
+    private ClientModel clientModel;
 
+    @OneToOne
+    @JoinColumn(name = "rentModel_id")
+    private RentModel rentModel;
+
+    @OneToOne
+    @JoinColumn(name = "returnModel_id")
+    private ReturnModel returnModel;
 
 }

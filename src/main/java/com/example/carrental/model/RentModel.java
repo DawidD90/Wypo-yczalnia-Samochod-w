@@ -4,8 +4,10 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -17,23 +19,15 @@ public class RentModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
-    @Column(name = "name")
-    private String name;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    @Column(name = "rent_date")
+    private Date rentDate;
 
-    @Column(name = "internet_domain")
-    private String internetDomain;
+    @Column(name = "comments")
+    private String comments;
 
-    @Column(name = "phone_number")
-    private String phoneNumber;
-
-    @Column(name = "owner")
-    private String owner;
-
-    @Column(name = "logotype")
-    private String logotype;
-
-    @Column(name = "branches")
-    private String branches;
+    @OneToOne(mappedBy = "rentModel")
+    private ReservationModel reservationModel;
 
     @ManyToOne
     @JoinColumn(name = "EmployeesModel_id")
