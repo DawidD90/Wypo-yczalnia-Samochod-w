@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -28,6 +29,10 @@ public class ClientModel {
     private String Email;
     @Column(name = "address")
     private String Address;
+
+    @OneToMany(mappedBy="ClientModel")
+ private List<ReservationModel> reservationModelList;
+
 
 }
 

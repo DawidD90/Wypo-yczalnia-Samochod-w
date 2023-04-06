@@ -1,6 +1,9 @@
 package com.example.carrental.controller;
 
-import com.example.carrental.model.*;
+import com.example.carrental.model.BranchModel;
+import com.example.carrental.model.CarStatus;
+import com.example.carrental.model.CarsModel;
+import com.example.carrental.model.EmployeesModel;
 import com.example.carrental.service.BranchService;
 import com.example.carrental.service.CarsService;
 import lombok.NoArgsConstructor;
