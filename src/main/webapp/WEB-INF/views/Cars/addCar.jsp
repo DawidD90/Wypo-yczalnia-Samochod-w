@@ -10,7 +10,7 @@
     <section class="resume-section" id="cars">
         <div class="resume-section-content">
             <h2 class="mb-5">Cars</h2>
-<c:forEach items="${carsModel}" var="title">
+<c:forEach items="${CarsModel}" var="title">
             <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                 <div class="flex-grow-1">
                     <h3 class="mb-0">Marka: ${title.make}</h3>

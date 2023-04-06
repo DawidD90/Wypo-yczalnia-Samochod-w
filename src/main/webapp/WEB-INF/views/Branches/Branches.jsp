@@ -15,7 +15,7 @@
             <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                 <div class="flex-grow-1">
                     <h3 class="mb-0">Branch address: ${title.address}</h3>
-                    <div class="subheading mb-3">Cars available in branch: ${title.availableCars}</div>
+<%--                    <div class="subheading mb-3">Cars available in branch: ${title.availableCars}</div>--%>
 
 
                 </div>
@@ -40,11 +40,11 @@
                         </div>
                     </div>
 
-                    <div class="form-group row">
-                        <label class="col-2" for="exampleFormControlInput2">availableCars</label>
-                        <div class="col-10">
-                            <input type="text" class="form-control" id="exampleFormControlInput2" name="availableCars" placeholder="add availableCars">
-                        </div>
+<%--                    <div class="form-group row">--%>
+<%--                        <label class="col-2" for="exampleFormControlInput2">availableCars</label>--%>
+<%--                        <div class="col-10">--%>
+<%--                            <input type="text" class="form-control" id="exampleFormControlInput2" name="availableCars" placeholder="add availableCars">--%>
+<%--                        </div>--%>
                     </div>
 
                     <input type="submit" class="btn btn-success" value="Zapisz">

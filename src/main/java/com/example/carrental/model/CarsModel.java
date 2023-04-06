@@ -42,9 +42,5 @@ public class CarsModel {
     @Column(name = "price")
     private String price;
 
-    @ManyToOne
-    @JoinColumn(name = "branchModel_id")
-    private BranchModel branchModel;
-
 
 }
