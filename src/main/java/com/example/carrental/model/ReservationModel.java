@@ -43,10 +43,15 @@ public class ReservationModel {
     @Column(name = "return_branch")
     private String returnBranch;
 
-    @ManyToOne
-    @JoinColumn(name = "carModel_id")
-    private CarsModel CarsModel;
 
     @Column(name = "sum")
     private float sum;
+
+    @ManyToOne
+    @JoinColumn(name = "CarsModel_id")
+    private CarsModel CarsModel;
+
+@ManyToOne
+@JoinColumn(name = "ClientModel_id")
+private ClientModel ClientModel;
 }

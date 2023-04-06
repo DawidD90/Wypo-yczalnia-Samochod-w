@@ -35,4 +35,8 @@ public class RentModel {
     @Column(name = "branches")
     private String branches;
 
+    @ManyToOne
+    @JoinColumn(name = "EmployeesModel_id")
+    private EmployeesModel EmployeesModel;
+            ;
 }

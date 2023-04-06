@@ -6,6 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -30,8 +32,13 @@ public class EmployeesModel {
 
 
    @ManyToOne
-   @JoinColumn(name = "branchModel_id")
+   @JoinColumn(name = "BranchModel_id")
    private BranchModel branchModel;
 
 
+   @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, mappedBy = "EmployeesModel")
+   private Set<RentModel> RentModel = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, mappedBy = "EmployeesModel")
+    private Set<ReturnModel> ReturnModel = new HashSet<>();
 }

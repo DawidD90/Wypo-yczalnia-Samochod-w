@@ -35,4 +35,8 @@ public class ReturnModel {
     @Column(name = "comments")
     private String comments;
 
+    @ManyToOne
+    @JoinColumn(name = "EmployeesModel_id")
+    private EmployeesModel EmployeesModel;
+
 }

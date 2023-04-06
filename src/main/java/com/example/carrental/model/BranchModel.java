@@ -21,8 +21,11 @@ public class BranchModel {
     @Column(name = "address")
     private String address;
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, mappedBy = "branchModel")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, mappedBy = "BranchModel")
     private Set<EmployeesModel> employees = new HashSet<>();
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, mappedBy = "BranchModel")
+    private Set<CarsModel> CarsModel = new HashSet<>();
 
 
 }

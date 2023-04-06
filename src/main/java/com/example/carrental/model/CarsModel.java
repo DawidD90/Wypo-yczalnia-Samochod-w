@@ -6,6 +6,9 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -42,5 +45,10 @@ public class CarsModel {
     @Column(name = "price")
     private String price;
 
+@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE,mappedBy="CarsModel")
+private Set<ReservationModel> reservationModelList = new HashSet<>();
 
+    @ManyToOne
+    @JoinColumn(name = "BranchModel_id")
+    private BranchModel branchModel;
 }
