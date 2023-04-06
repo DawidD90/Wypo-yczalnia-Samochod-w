@@ -46,8 +46,8 @@ public class CarsModel {
     @Column(name = "price")
     private String price;
 
-@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE,mappedBy="CarsModel")
-private Set<ReservationModel> reservationModelList = new HashSet<>();
+@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE,mappedBy="carsModel")
+private Set<ReservationModel> reservationModel = new HashSet<>();
 
     @ManyToOne
     @JoinColumn(name = "BranchModel_id")

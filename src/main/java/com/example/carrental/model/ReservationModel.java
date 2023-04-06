@@ -38,8 +38,10 @@ public class ReservationModel {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "reservation_to")
     private Date reservationTo;
+
     @Column(name = "rent_branch")
     private String Branchmodel;
+
     @Column(name = "return_branch")
     private String returnBranch;
 
@@ -54,4 +56,6 @@ public class ReservationModel {
 @ManyToOne
 @JoinColumn(name = "ClientModel_id")
 private ClientModel clientModel;
+
+
 }

@@ -30,8 +30,8 @@ public class ClientModel {
     @Column(name = "address")
     private String Address;
 
-    @OneToMany(mappedBy="ClientModel")
- private List<ReservationModel> reservationModelList;
+    @OneToMany(mappedBy="clientModel")
+ private List<ReservationModel> reservationModel;
 
 
 }

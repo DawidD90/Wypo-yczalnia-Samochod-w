@@ -36,9 +36,9 @@ public class EmployeesModel {
    private BranchModel branchModel;
 
 
-   @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, mappedBy = "EmployeesModel")
+   @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, mappedBy = "employeesModel")
    private Set<RentModel> rentModel = new HashSet<>();
 
-    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, mappedBy = "EmployeesModel")
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, mappedBy = "employeesModel")
     private Set<ReturnModel> returnModel = new HashSet<>();
 }
