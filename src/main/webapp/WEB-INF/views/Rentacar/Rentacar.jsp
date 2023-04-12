@@ -5,6 +5,8 @@
 
         <!-- Page Content-->
         <div class="container-fluid p-0">
+
+            <form method="post" action='<c:url value="/reservation"/>'>
             <!-- Interests-->
             <section class="resume-section" id="rentACar">
                 <div class="resume-section-content">
@@ -90,6 +92,7 @@
 
                 </div>
             </section>
+            </form>
         </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

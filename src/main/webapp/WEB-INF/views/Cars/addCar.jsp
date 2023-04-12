@@ -75,6 +75,7 @@
                 <div class="col-10">
                     <input type="text" class="form-control" id="exampleFormControlInput7"
                            name="price" placeholder="please provide rental fee">
+                    <input type="datetime-local" id="date">
                 </div>
             </div>
 

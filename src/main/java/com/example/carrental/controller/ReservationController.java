@@ -1,6 +1,9 @@
 package com.example.carrental.controller;
 
+import com.example.carrental.model.BranchModel;
 import com.example.carrental.model.RentModel;
+import com.example.carrental.model.ReservationModel;
+import com.example.carrental.service.BranchService;
 import com.example.carrental.service.CarsService;
 import com.example.carrental.service.RentService;
 import com.example.carrental.service.ReservationService;
@@ -17,23 +20,25 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Controller
-@RequestMapping("/Reservation")
+@RequestMapping("/Rentacar")
 public class ReservationController {
 
     private final ReservationService reservationService;
+    private final BranchService branchService;
     private final CarsService carsService;
 
-//    @GetMapping
-//    public String getRentsList(Model model) {
-//        List<RentModel> rentModels = reservationService.getAllRent();
-//        model.addAttribute("rentModel", rentModels);
-//        return "Rentacar/Rentacar";
-//    }
-//    @PostMapping
-//    public RedirectView postAddRent(RentModel rentModel) {
-//        rentService.addRent(rentModel);
-//        return new RedirectView("/rent");
-//    }
+    @GetMapping()
+    public String getReservationList(Model model) {
+        List<ReservationModel> reservationModels = reservationService.getAllReservations();
+        model.addAttribute("reservationModel", reservationModels);
+        model.addAttribute("branchModel", branchService.getAllBranch());
+        return "Rentacar/Rentacar";
+    }
+    @PostMapping()
+    public RedirectView postAddReservation(ReservationModel reservationModel) {
+        reservationService.addReservation(reservationModel);
+        return new RedirectView("/Rentacar");
+    }
 //
 //
 //    @PostMapping("/edit")
