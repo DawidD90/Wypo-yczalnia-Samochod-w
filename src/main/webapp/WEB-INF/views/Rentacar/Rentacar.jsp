@@ -14,6 +14,7 @@
 
                     <!DOCTYPE html>
                     <html>
+
                     <head>
                         <title>Nice Looking Form</title>
                         <style>
@@ -35,7 +36,7 @@
                                 margin-bottom: 5px;
                                 font-weight: bold;
                             }
-                            input[type=text], input[type=email], textarea {
+                            input[type=text], input[type=datetime-local], textarea {
                                 width: 100%;
                                 padding: 10px;
                                 border: 1px solid #ccc;
@@ -61,15 +62,26 @@
                     <body>
                     <form action="process-form.jsp" method="post">
                         <label for="name">Date from:</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="date" id="name" name="name" required>
 
-                        <label for="email">Date to:</label>
-                        <input type="email" id="email" name="email" required>
+                        <label for="name">Date to:</label>
+                        <input type="date" id="email" name="email" required>
 
-                        <label for="message">Select a branch:</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <div class="form-group row">
 
+                        <label for="name">Select a branch:</label>
+                            <select class="form-control" name="branchModel.id">
+                                <option hidden>Select a branch </option>
+                                <c:forEach items="${branchModel}" var="example">
+                                <option value="${example.id}">${example.address}</option>
+                            </c:forEach>
+                            </select>
+
+                        <section>
+                            <br>
                         <button type="submit">Submit</button>
+                            <br>
+                        </section>
                     </form>
                     </body>
                     </html>

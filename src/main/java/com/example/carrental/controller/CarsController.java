@@ -29,6 +29,7 @@ public class CarsController {
         model.addAttribute("carsModel", carsModels);
         model.addAttribute("carStatus", CarStatus.values());
         return "Cars/Cars";
+
     }
 
     @PostMapping
@@ -44,6 +45,16 @@ public class CarsController {
         model.addAttribute("carStatus", CarStatus.values());
         return "Cars/addCar";
     }
+    @GetMapping("/rentacar")
+    public String getAddCar2(Model model) {
+        List<BranchModel> list = branchService.getAllBranch();
+        model.addAttribute("branchModel", list);
+        model.addAttribute("carStatus", CarStatus.values());
+        return "Rentacar";
+    }
+
+
+
 
     @PostMapping("/addCar")
     public RedirectView postAddCar(CarsModel car) {
