@@ -39,8 +39,25 @@ public class ReservationController {
         reservationService.addReservation(reservationModel);
         return new RedirectView("/Rentacar");
     }
-//
-//
+
+    @GetMapping("/Rentacar")
+    public String getAvailableCar(Model model) {
+        List<ReservationModel> reservationModels = reservationService.getAllReservations();
+        model.addAttribute("reservationModel", reservationModels);
+        model.addAttribute("branchModel", branchService.getAllBranch());
+        model.addAttribute("carsModel", carsService.getAllCars());
+        return "Rentacar/RentAvailableCar";
+    }
+
+
+    @PostMapping("/Rentacar")
+    public RedirectView postAvailableCar(ReservationModel reservationModel) {
+        reservationService.addReservation(reservationModel);
+        return new RedirectView("/Rentacar/Rentacar");
+    }
+
+
+
 //    @PostMapping("/edit")
 //    public RedirectView postEditRent(RentModel rentModel) {
 //        rentService.saveEditRent(rentModel);

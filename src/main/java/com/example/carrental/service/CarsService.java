@@ -1,5 +1,6 @@
 package com.example.carrental.service;
 
+import com.example.carrental.model.BranchModel;
 import com.example.carrental.model.CarsModel;
 import com.example.carrental.model.StatisticsModel;
 import com.example.carrental.repository.CarsRepository;
@@ -34,14 +35,10 @@ public class CarsService {
         carsRepository.deleteById(id);
     }
 
-    public CarsModel getCarsById(Long id) {
-        Optional<CarsModel> car = carsRepository.findById(id);
-        if(car.isPresent()){
-            return carsRepository.findById(id).orElse(null);
-        } else {
-            log.info("brak");
-            return null;
-        }
-    }
+//    public void findCarsModelsByBranch(String branch){
+//
+//        carsRepository.findCarsModelsByBranchModel(branch);
+//    }
+
 }
 

@@ -6,7 +6,7 @@
         <!-- Page Content-->
         <div class="container-fluid p-0">
 
-            <form method="post" action='<c:url value="/reservation"/>'>
+            <form method="post" action='<c:url value="/Rentacar"/>'>
             <!-- Interests-->
             <section class="resume-section" id="rentACar">
                 <div class="resume-section-content">
@@ -80,11 +80,15 @@
                             </select>
 
                         <section>
-                            <br>
-                        <button type="submit">Submit</button>
-                            <br>
+                            <a href='<c:url value="/Rentacar/Rentacar"/>' class="btn btn-success">
+                    <span class="icon text-white-50">
+                      <i class="fas fa-info-circle"></i>
+                    </span>
+                                <span class="text">Submit</span>
+                            </a>
                         </section>
                     </form>
+
                     </body>
                     </html>
 
