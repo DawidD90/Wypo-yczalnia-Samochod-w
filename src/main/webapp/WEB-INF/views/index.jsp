@@ -16,11 +16,12 @@
                     <p class="lead mb-5">Do you need a car for a day, a week or maybe for longer? With us you can rent cars from many different global brands. Check out our offers!</p>
                     <div class="subheading mb-5">
                         <h2 class="mb-5">Our Branches</h2>
+                        <div>
                         <c:forEach items="${branchModel}" var="title">
                         <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                             <div class="flex-grow-1">
                                 <h3 class="mb-0">Branch address: ${title.address}</h3>
-
+                            </div>
 
                             </div>
 
