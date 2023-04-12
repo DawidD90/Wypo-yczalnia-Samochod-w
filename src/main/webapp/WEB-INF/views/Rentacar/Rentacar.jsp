@@ -14,6 +14,7 @@
 
                     <!DOCTYPE html>
                     <html>
+
                     <head>
                         <title>Nice Looking Form</title>
                         <style>
@@ -66,10 +67,21 @@
                         <label for="name">Date to:</label>
                         <input type="date" id="email" name="email" required>
 
-                        <label for="name">Select a branch:</label>
-                        <textarea id="text" name="message" rows="5" required></textarea>
+                        <div class="form-group row">
 
+                        <label for="name">Select a branch:</label>
+                            <select class="form-control" name="branchModel.id">
+                                <option hidden>Select a branch </option>
+                                <c:forEach items="${branchModel}" var="example">
+                                <option value="${example.id}">${example.address}</option>
+                            </c:forEach>
+                            </select>
+
+                        <section>
+                            <br>
                         <button type="submit">Submit</button>
+                            <br>
+                        </section>
                     </form>
                     </body>
                     </html>
