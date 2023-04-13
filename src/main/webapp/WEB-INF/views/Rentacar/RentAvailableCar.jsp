@@ -6,7 +6,7 @@
         <!-- Page Content-->
         <div class="container-fluid p-0">
 
-            <form method="post" action='<c:url value="/Rentacar/Rentacar"/>'>
+            <form method="post" action='<c:url value="/Rentacar/RentAvailableCar"/>'>
             <!-- Interests-->
             <section class="resume-section" id="rentACar">
                 <div class="resume-section-content">
@@ -28,10 +28,7 @@
                                             <div class="subheading mb-3">Branch: ${title.branchModel.address}</div>
                                             <div class="subheading mb-3">Price: ${title.price}</div>
                                         </div>
-                                        <!-- Delete Button -->
-                                        <form method="post" action='<c:url value="/cars/${title.id}"/>'>
-                                            <input type="submit" value="usuń" class="btn btn-danger">
-                                        </form>
+
 
                                     </div>
 

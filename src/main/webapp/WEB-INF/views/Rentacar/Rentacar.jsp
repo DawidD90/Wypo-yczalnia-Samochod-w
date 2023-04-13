@@ -80,7 +80,7 @@
                             </select>
 
                         <section>
-                            <a href='<c:url value="/Rentacar/Rentacar"/>' class="btn btn-success">
+                            <a href='<c:url value="/Rentacar/RentAvailableCar"/>' class="btn btn-success">
                     <span class="icon text-white-50">
                       <i class="fas fa-info-circle"></i>
                     </span>

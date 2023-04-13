@@ -1,5 +1,6 @@
 package com.example.carrental.repository;
 
+import com.example.carrental.model.BranchModel;
 import com.example.carrental.model.CarsModel;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -16,7 +17,8 @@ public interface CarsRepository extends JpaRepository<CarsModel, Long> {
 
     Page<CarsModel> findAllBy(Pageable pageable);
 
-//    List<CarsModel> findByBranch(String name);
+
+//    List<CarsModel> carsByBranch(BranchModel branchModel);
 
 
 //    @Transactional
