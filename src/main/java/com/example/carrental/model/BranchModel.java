@@ -27,4 +27,5 @@ public class BranchModel {
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, mappedBy = "branchModel")
     private Set<CarsModel> cars = new HashSet<>();
 
+
 }

@@ -69,6 +69,21 @@ public class CarsController {
         return new RedirectView("/cars");
     }
 
+    @PostMapping("/edit/{id}/{status}")
+    public RedirectView editCarStatus(@PathVariable("id") Long id, @PathVariable("status") String carStatus) {
+        carsService.updateCarStatusById(id, carStatus);
+        return new RedirectView("/cars");
+    }
+
+
+
+//    @GetMapping("/edit/{id}")
+//    public String getCarsById(@PathVariable("id") Long id, Model model) {
+//        CarsModel carsModel = carsService.getCarsById(id);
+//        model.addAttribute("carsModel", carsModel);
+//        return "/Cars/Cars";
+//    }
+
     @PostMapping("/{id}")
     public RedirectView deleteCars(@PathVariable("id") Long id) {
         carsService.deleteCars(id);

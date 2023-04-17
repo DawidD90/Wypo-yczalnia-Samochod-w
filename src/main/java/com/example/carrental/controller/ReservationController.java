@@ -44,15 +44,36 @@ public class ReservationController {
         return new RedirectView("/Rentacar");
     }
 
-//    @GetMapping("/Rentacar")
+
+//    @GetMapping("/RentAvailableCar")
 //    public String getAvailableCar(Model model) {
 //        List<ReservationModel> reservationModels = reservationService.getAllReservations();
 //        model.addAttribute("reservationModel", reservationModels);
 //        model.addAttribute("branchModel", branchService.getAllBranch());
-//        model.addAttribute("carsModel", carsService.getAllCars());
+//        model.addAttribute("carModel", carsService.getAllCars());
+//        return "Rentacar/RentAvailableCar";
+//    }
+//
+//    @GetMapping("/RentAvailableCar/{id}")
+//    public String getCarsById(@PathVariable("id") Long id, Model model) {
+//        CarsModel carsModel = carsService.getCarsById(id);
+//        model.addAttribute("carsModel", carsModel.getBranchModel().getAddress());
 //        return "Rentacar/RentAvailableCar";
 //    }
 
+
+    @GetMapping("/RentAvailableCar/{address}")
+    public String findCarsModelsByBranchModel(@PathVariable("address") String address, Long id, Model model) {
+        List<CarsModel> availableCars = carsService.findCarsModelsByBranchModel(id, address);
+        model.addAttribute("availableCars", availableCars);
+        return "Rentacar/RentAvailableCar";
+    }
+
+//    @PostMapping("/RentAvailableCar/{address}")
+//    public RedirectView findCarsModelsByBranchModel(@PathVariable("address") String address) {
+//        carsService.findCarsModelsByBranchModel(address);
+//        return new RedirectView("Rentacar/RentAvailableCar");
+//    }
 
     @PostMapping("/Rentacar")
     public RedirectView postAvailableCar(ReservationModel reservationModel) {
@@ -61,21 +82,12 @@ public class ReservationController {
     }
 
 
-    @GetMapping("/Rentacar/RentAvailableCar/{carsModel}")
-    public ResponseEntity <List<CarsModel>> getCarsByBranch(@PathVariable CarsModel carsModel) {
-        List<CarsModel> carsByBranch = carsService.getAllCars().stream().filter(car ->
-                car.getBranchModel().equals(carsModel.getBranchModel())).collect(Collectors.toList());
-        if (carsByBranch.isEmpty()){
-            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-        }
-        return new ResponseEntity<>(carsByBranch, HttpStatus.OK) + new RedirectView("/Rentacar/RentAvailableCar");
-
-    }
-
-//        @GetMapping("/Rentacar/RentAvailableCar/{carsModel}")
-//    public String postCarsByBranch(ResponseEntity <List<CarsModel>> getCarsByBranch) {
-//           getCarsByBranch.toString();
-//        return "Rentacar/RentAvailableCar";
+//    @GetMapping("/RentAvailableCar/{address}")
+//    public RedirectView getCarsByBranch(@PathVariable ("address") String address, Model model) {
+//        List<CarsModel> carsByBranch = carsService.getAllCars().stream().filter(car ->
+//                car.getBranchModel().getAddress().equals(address)).collect(Collectors.toList());
+//        model.addAttribute("carsByBranch", carsByBranch);
+//        return new RedirectView("/Rentacar/RentAvailableCar/{address}");
 //    }
 
 
