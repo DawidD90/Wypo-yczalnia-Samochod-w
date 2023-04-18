@@ -6,7 +6,7 @@
         <!-- Page Content-->
         <div class="container-fluid p-0">
 
-            <form method="post" action='<c:url value="/Rentacar/RentAvailableCar/${branchModel.address}"/>'>
+            <form method="get" action='<c:url value="/Rentacar/RentAvailableCar/${id}"/>'>
             <!-- Interests-->
             <section class="resume-section" id="rentACar">
                 <div class="resume-section-content">
@@ -14,7 +14,7 @@
 
                     <div class="container-fluid p-0">
                         <!-- Cars-->
-                                <c:forEach items="${availableCars}" var="title">
+                                <c:forEach items="${carsByBranch}" var="title">
                                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                                         <div class="flex-grow-1">
                                             <h3 class="mb-0">Marka: ${title.make}</h3>

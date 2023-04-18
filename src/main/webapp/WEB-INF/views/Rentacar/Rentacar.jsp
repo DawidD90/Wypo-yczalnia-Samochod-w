@@ -71,26 +71,38 @@
 
                         <div class="form-group row">
 
-                        <label for="name">Select a branch:</label>
-                            <select class="form-control" name="branchModel.id">
-                                <option hidden>Select a branch </option>
-                                <c:forEach items="${branchModel}" var="example">
-                                <option value="${example.id}">${example.address}</option>
-                            </c:forEach>
-                            </select>
+                             <label for="name">Select a branch:</label>
+                                    <select id="branchAddress" class="form-control" name="branchModel.id">
 
-                        <section>
-                            <a href='<c:url value="/Rentacar/RentAvailableCar"/>' class="btn btn-success">
-                    <span class="icon text-white-50">
-                      <i class="fas fa-info-circle"></i>
-                    </span>
+
+                                      <option hidden>Select a branch </option>
+                                      <c:forEach items="${branchModel}" var="example">
+                                        <option value="${example.id}">${example.address}</option>
+                                      </c:forEach>
+                                    </select>
+
+                                <section>
+                                 <a id="carsLink" type="submit" class="btn btn-success">
+                                <span class="icon text-white-50">
+                                 <i class="fas fa-info-circle"></i>
+                                 </span>
                                 <span class="text">Submit</span>
                             </a>
-                        </section>
-                    </form>
+                             </section>
+                            <script>
+                                var select = document.getElementById("branchAddress");
+                                var link = document.getElementById("carsLink");
 
-                    </body>
-                    </html>
+
+                                select.addEventListener("change", function() {
+                                    var selectedOption = select.options[select.selectedIndex];
+                                    var url = "<c:url value='/Rentacar/RentAvailableCar/" + selectedOption.value + "'/>";
+                                    link.href = url;
+                                });
+                            </script>
+
+
+                         </form>
 
 
 
