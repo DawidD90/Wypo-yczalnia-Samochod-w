@@ -24,6 +24,7 @@ public class HomeController {
 
     private final BranchService branchService;
 
+
     @GetMapping
     public String getHomeList(Model model) {
         List<HomeModel> homeModels = homeService.getAllHome();
@@ -32,6 +33,8 @@ public class HomeController {
         model.addAttribute("branchModel", branchModels);
         return "index";
     }
+
+
     @PostMapping
     public RedirectView postAddHome(HomeModel homeModel) {
         homeService.addHome(homeModel);

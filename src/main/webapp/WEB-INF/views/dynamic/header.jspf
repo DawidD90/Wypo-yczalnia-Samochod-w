@@ -1,3 +1,4 @@
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,9 +30,13 @@
             <li class="nav-item"><a class="nav-link js-scroll-trigger" href='<c:url value="/cars"/>'>Cars</a></li>
             <li class="nav-item"><a class="nav-link js-scroll-trigger" href='<c:url value="/employees"/>'>Employees</a></li>
             <li class="nav-item"><a class="nav-link js-scroll-trigger" href='<c:url value="/Rentacar"/>'>Rent a Car</a></li>
+            <security:authorize access="hasAnyRole('ADMIN')">
             <li class="nav-item"><a class="nav-link js-scroll-trigger" href='<c:url value="/statistics"/>'>Statistics</a></li>
+            </security:authorize>
             <li class="nav-item"><a class="nav-link js-scroll-trigger" href='<c:url value="/client"/>'>Clients</a></li>
             <li class="nav-item"><a class="nav-link js-scroll-trigger" href='<c:url value="/branch"/>'>Branches</a></li>
+            <li class="nav-item"><a class="nav-link js-scroll-trigger" href='<c:url value="/login"/>'>Administration panel</a></li>
+
         </ul>
 
     </div>
