@@ -21,18 +21,20 @@
 
                 </div>
                 </div>
-
+                <security:authorize access="hasAnyRole('ROLE_Admin')">
                 <!-- Delete Button -->
                 <form method="post" action='<c:url value="/branch/${title.id}"/>'>
                     <input type="submit" value="usuń" class="btn btn-danger">
 
                 </form>
+                </security:authorize>
 
                 </c:forEach>
+
             </div>
 
 
-
+<security:authorize access="hasAnyRole('ROLE_Admin')">
             <div class="container">
                 <form method="post" action='<c:url value="/branch"/>'>
                     <div class="form-group row">
@@ -52,7 +54,7 @@
                     <input type="submit" class="btn btn-success" value="Zapisz">
                 </form>
             </div>
-
+        </security:authorize>
 
 
 

@@ -27,9 +27,13 @@
 <%--                <form method="" action='<c:url value="/employees/${title.id}"/>'>--%>
 <%--                    <input type="submit" value="usuń" class="btn btn-danger">--%>
 <%--                </form>--%>
+                <security:authorize access="hasAnyRole('ROLE_Admin')">
+
+
                 <form method="post" action='<c:url value="/employees/${title.id}"/>'>
                     <input type="submit" value="usuń" class="btn btn-danger">
                 </form>
+                </security:authorize>
 
 </table>
             </c:forEach>
@@ -45,14 +49,14 @@
 
     <div class="card-header py-3">
 
-
+<security:authorize access="hasAnyRole('ROLE_Admin')">
         <a href='<c:url value="/employees/addEmployee"/>' class="btn btn-info btn-icon-split">
                     <span class="icon text-white-50">
                       <i class="fas fa-info-circle"></i>
                     </span>
             <span class="text">Dodaj nowego</span>
         </a>
-
+</security:authorize>
 
     </div>
 

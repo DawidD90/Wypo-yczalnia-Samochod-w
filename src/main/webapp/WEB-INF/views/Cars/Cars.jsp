@@ -23,17 +23,19 @@
                     <div class="subheading mb-3">Branch: ${title.branchModel.address}</div>
                     <div class="subheading mb-3">Price: ${title.price}</div>
                 </div>
+                <security:authorize access="hasAnyRole('ROLE_Admin')">
                 <!-- Delete Button -->
                 <form method="post" action='<c:url value="/cars/${title.id}"/>'>
                     <input type="submit" value="usuń" class="btn btn-danger">
                 </form>
-
+                </security:authorize>
             </div>
 
 </c:forEach>
         </div>
     </section>
 
+<security:authorize access="hasAnyRole('ROLE_Admin')">
     <div class="card-header py-3">
 
 
@@ -46,7 +48,7 @@
 
 
     </div>
-
+</security:authorize>
 
 
 
