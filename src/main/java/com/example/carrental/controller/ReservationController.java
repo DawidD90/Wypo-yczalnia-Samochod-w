@@ -3,6 +3,7 @@ package com.example.carrental.controller;
 import com.example.carrental.model.BranchModel;
 import com.example.carrental.model.CarStatus;
 import com.example.carrental.model.CarsModel;
+import com.example.carrental.model.ReservationModel;
 import com.example.carrental.service.BranchService;
 import com.example.carrental.service.CarsService;
 import com.example.carrental.service.ReservationService;
@@ -30,20 +31,22 @@ public class ReservationController {
     public String getReservationList(Model model) {
         List<BranchModel> branchModels = branchService.getAllBranch();
         model.addAttribute("branchModel", branchModels);
+        List<ReservationModel> reservationModels = reservationService.getAllReservations();
+        model.addAttribute("reservationModels", reservationModels);
         return "Rentacar/Rentacar";
     }
 
-    @PostMapping()
-    public RedirectView findCarsModelsByBranchModel(@PathVariable("id") Long id, @PathVariable("address") String address) {
-        carsService.findCarsModelsByBranchModel(id, address);
-        return new RedirectView("Rentacar/RentAvailableCar");
-    }
+//    @PostMapping()
+//    public RedirectView findCarsModelsByBranchModel(@PathVariable("id") Long id, @PathVariable("address") String address) {
+//        carsService.findCarsModelsByBranchModel(id, address);
+//        return new RedirectView("Rentacar/RentAvailableCar");
+//    }
 
     @GetMapping("/RentAvailableCar/{id}")
-    public ModelAndView getCarsByBranch(@PathVariable ("id") Long id) {
+    public ModelAndView getCarsByBranch(@PathVariable("id") Long id) {
         List<CarsModel> carsByBranch = carsService.getAllCars().stream().filter(car ->
-                car.getBranchModel().getId().equals(id))
-                .collect(Collectors.toList()).stream().filter(car -> car.getCarStatus().equals(CarStatus.AVAILABLE)).collect(Collectors.toList());
+                        car.getBranchModel().getId().equals(id))
+                .collect(Collectors.toList()).stream().filter(car -> car.getCarStatus().equals(CarStatus.AVAIlABLE)).collect(Collectors.toList());
         ModelAndView modelAndView = new ModelAndView("/Rentacar/RentAvailableCar");
         modelAndView.addObject("carsByBranch", carsByBranch);
         return modelAndView;
@@ -66,12 +69,25 @@ public class ReservationController {
 //    }
 
 
-//    @PostMapping()
+//    @PostMapping("/{reservation_id}")
 //    public RedirectView postAddReservation(ReservationModel reservationModel) {
 //        reservationService.addReservation(reservationModel);
 //        return new RedirectView("/Rentacar");
 //    }
 
+    @PostMapping("/RentAvailableCar")
+    public ModelAndView postAddReservation(ReservationModel reservationModel) {
+        reservationService.addReservation(reservationModel);
+        ModelAndView modelAndView = new ModelAndView("/Rentacar");
+        modelAndView.addObject("reservationModels", reservationService.getAllReservations());
+        return modelAndView;
+    }
+//    @GetMapping("/RentAvailableCar")
+//    public RedirectView getAddReservations(Model model) {
+//        List<ReservationModel> reservationModels = reservationService.getAllReservations();
+//        model.addAttribute("reservationModels", reservationModels);
+//        return new RedirectView("/Rentacar");
+//    }
 
 //    @GetMapping("/RentAvailableCar")
 //    public String getAvailableCar(Model model) {

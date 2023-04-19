@@ -6,7 +6,7 @@
         <!-- Page Content-->
         <div class="container-fluid p-0">
 
-            <form method="get" action='<c:url value="/Rentacar/RentAvailableCar/${id}"/>'>
+           <form method="post" action='<c:url value="/Rentacar/RentAvailableCar"/>'>
             <!-- Interests-->
             <section class="resume-section" id="rentACar">
                 <div class="resume-section-content">
@@ -27,6 +27,10 @@
                                             <div class="subheading mb-3">Branch: ${title.branchModel.address}</div>
                                             <div class="subheading mb-3">Price: ${title.price}</div>
                                         </div>
+                                        <!-- Reservation Button -->
+<%--                                        <form method="post" action='<c:url value="/Rentacar/RentAvailableCar"/>'>--%>
+                                            <input type="submit" value="make" class="btn btn-success">
+                                        </form>
 
 
                                     </div>
@@ -37,7 +41,7 @@
 
                 </div>
             </section>
-            </form>
+            <!--</form>-->
         </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

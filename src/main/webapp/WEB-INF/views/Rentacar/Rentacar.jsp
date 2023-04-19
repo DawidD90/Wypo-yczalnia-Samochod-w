@@ -71,7 +71,7 @@
 
                         <div class="form-group row">
 
-                             <label for="name">Select a branch:</label>
+                             <label for="dateFrom">Select a branch:</label>
                                     <select id="branchAddress" class="form-control" name="branchModel.id">
 
 
@@ -101,14 +101,38 @@
                                 });
                             </script>
 
-
                          </form>
-
-
 
                 </div>
             </section>
-            </form>
+
+
+                <div class="container-fluid p-0">
+
+
+                    <section class="resume-section" id="reservationList">
+                        <div class="resume-section-content">
+                            <h2 class="mb-5">Our reservation list</h2>
+
+                            <c:forEach items="${reservationModels}" var="reservation">
+                            <table>
+
+                                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                                    <div class="flex-grow-1">
+                                        <h3 class="mb-0">Date of reservation: ${reservation.reservationFrom}  ${reservation.reservationTo}</h3>
+                                        <div class="subheading mb-3">Client: ${reservation.client}</div>
+                                        <div class="subheading mb-3">Car: ${reservation.car}</div>
+                                        <div class="subheading mb-3">Production Year: ${reservation.branchmodel}</div>
+
+                                    </div>
+
+                            </table>
+                            </c:forEach>
+                    </section>
+                </div>
+                </form>
+
+
         </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
