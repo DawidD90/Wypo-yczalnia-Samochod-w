@@ -1,25 +1,18 @@
 package com.example.carrental.controller;
 
 import com.example.carrental.model.BranchModel;
+import com.example.carrental.model.CarStatus;
 import com.example.carrental.model.CarsModel;
-import com.example.carrental.model.ReservationModel;
 import com.example.carrental.service.BranchService;
 import com.example.carrental.service.CarsService;
 import com.example.carrental.service.ReservationService;
 import lombok.RequiredArgsConstructor;
-import org.apache.jasper.tagplugins.jstl.core.Redirect;
-import org.apache.jasper.tagplugins.jstl.core.Url;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.remoting.RemoteTimeoutException;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
-import java.net.URL;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -41,7 +34,7 @@ public class ReservationController {
     }
 
     @PostMapping()
-    public RedirectView findCarsModelsByBranchModel(@PathVariable("id") Long id, @PathVariable("${address}") String address) {
+    public RedirectView findCarsModelsByBranchModel(@PathVariable("id") Long id, @PathVariable("address") String address) {
         carsService.findCarsModelsByBranchModel(id, address);
         return new RedirectView("Rentacar/RentAvailableCar");
     }
@@ -49,7 +42,8 @@ public class ReservationController {
     @GetMapping("/RentAvailableCar/{id}")
     public ModelAndView getCarsByBranch(@PathVariable ("id") Long id) {
         List<CarsModel> carsByBranch = carsService.getAllCars().stream().filter(car ->
-                car.getBranchModel().getId().equals(id)).collect(Collectors.toList());
+                car.getBranchModel().getId().equals(id))
+                .collect(Collectors.toList()).stream().filter(car -> car.getCarStatus().equals(CarStatus.AVAILABLE)).collect(Collectors.toList());
         ModelAndView modelAndView = new ModelAndView("/Rentacar/RentAvailableCar");
         modelAndView.addObject("carsByBranch", carsByBranch);
         return modelAndView;

@@ -63,11 +63,11 @@
                     </head>
                     <body>
                     <form action="process-form.jsp" method="post">
-                        <label for="name">Date from:</label>
-                        <input type="date" id="name" name="name" required>
+                        <label for="dateFrom">Date from:</label>
+                        <input type="date" id="dateFrom" name="dateFrom" required>
 
-                        <label for="name">Date to:</label>
-                        <input type="date" id="email" name="email" required>
+                        <label for="dateFrom">Date to:</label>
+                        <input type="date" id="dateTo" name="dateTo" required>
 
                         <div class="form-group row">
 
