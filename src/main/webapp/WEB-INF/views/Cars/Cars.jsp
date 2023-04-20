@@ -13,7 +13,7 @@
 <c:forEach items="${carsModel}" var="title">
             <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                 <div class="flex-grow-1">
-                    <h3 class="mb-0">Marka: ${title.make}</h3>
+                    <h3 class="mb-0">Make: ${title.make}</h3>
                     <div class="subheading mb-3">Model: ${title.model}</div>
                     <div class="subheading mb-3">Body Type: ${title.bodyType}</div>
                     <div class="subheading mb-3">Production Year: ${title.productionYear}</div>
