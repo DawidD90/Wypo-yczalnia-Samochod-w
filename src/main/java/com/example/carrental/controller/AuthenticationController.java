@@ -11,5 +11,8 @@ public class AuthenticationController {
     public String getLogin(){
         return "auth/login";
     }
+
+    @GetMapping("/registration")
+    public String getRegistration(){return "auth/registration";}
     }
 
