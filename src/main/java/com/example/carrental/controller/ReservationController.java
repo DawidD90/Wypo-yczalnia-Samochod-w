@@ -1,9 +1,6 @@
 package com.example.carrental.controller;
 
-import com.example.carrental.model.BranchModel;
-import com.example.carrental.model.CarStatus;
-import com.example.carrental.model.CarsModel;
-import com.example.carrental.model.ReservationModel;
+import com.example.carrental.model.*;
 import com.example.carrental.service.BranchService;
 import com.example.carrental.service.CarsService;
 import com.example.carrental.service.ReservationService;
@@ -14,6 +11,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.servlet.http.HttpServletRequest;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -52,6 +51,20 @@ public class ReservationController {
         return modelAndView;
     }
 
+    @PostMapping("/RentAvailableCar")
+    public ModelAndView saveCarAndDate(@RequestParam CarsModel car) {
+        ModelAndView modelAndView = new ModelAndView("Rentacar/reservation");
+        modelAndView.addObject("carsByBranch", car);
+        return modelAndView;
+    }
+
+//    @GetMapping("/reservation")
+//    public String getReservationPanel(Model model) {
+//        List<CarsModel> carsModels = carsService.getAllCars().stream().filter(car ->
+//                car.equals(saveCarAndDate(car))).collect(Collectors.toList());
+//        model.addAttribute("carsByBranch", carsModels);
+//        return "Rentacar/reservation";
+    }
 //    @GetMapping("/RentAvailableCar")
 //    public ModelAndView getReservationPanel(@PathVariable("id") Long id) {
 //        List<CarsModel> reservationModels = carsService.getCarsById(id);
@@ -84,13 +97,7 @@ public class ReservationController {
 //        return new RedirectView("/Rentacar");
 //    }
 
-    @PostMapping("/RentAvailableCar")
-    public ModelAndView postAddReservation(ReservationModel reservationModel) {
-        reservationService.addReservation(reservationModel);
-        ModelAndView modelAndView = new ModelAndView("/Rentacar");
-        modelAndView.addObject("reservationModels", reservationService.getAllReservations());
-        return modelAndView;
-    }
+
 //    @GetMapping("/RentAvailableCar")
 //    public RedirectView getAddReservations(Model model) {
 //        List<ReservationModel> reservationModels = reservationService.getAllReservations();
