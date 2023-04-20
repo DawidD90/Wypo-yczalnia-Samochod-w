@@ -18,8 +18,6 @@ public class AuthenticationController {
         return "auth/login";
     }
 
-    @GetMapping("/registration")
-    public String getRegistration(){return "auth/registration";}
 
 
 //    @GetMapping("/registration")
