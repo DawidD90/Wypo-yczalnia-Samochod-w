@@ -33,6 +33,9 @@ public class ClientModel {
     @OneToMany(mappedBy="clientModel")
  private List<ReservationModel> reservationModel;
 
+ @OneToOne(mappedBy = "clientModel")
+ private RegistrationModel registrationModel;
+
 
 }
 

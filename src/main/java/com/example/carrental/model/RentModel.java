@@ -32,5 +32,5 @@ public class RentModel {
     @ManyToOne
     @JoinColumn(name = "EmployeesModel_id")
     private EmployeesModel employeesModel;
-            ;
+
 }
