@@ -53,6 +53,15 @@ public class ReservationController {
     }
 
 //    @GetMapping("/RentAvailableCar")
+//    public ModelAndView getReservationPanel(@PathVariable("id") Long id) {
+//        List<CarsModel> reservationModels = carsService.getCarsById(id);
+//        modelAndView.addObject("carsByBranch", reservationModels);
+//        ModelAndView modelAndView = new ModelAndView("/Rentacar/RentAvailableCar");
+//        modelAndView.addObject("carsByBranch", carsByBranch);
+//        return modelAndView;
+//    }
+
+//    @GetMapping("/RentAvailableCar")
 //    public String getAvailableCarsList(@PathVariable("id") Long id, @PathVariable("${address}") String address, Model model) {
 //        List<CarsModel> carsModelList = carsService.findCarsModelsByBranchModel(id, address);
 //        model.addAttribute("availableCars", carsModelList);

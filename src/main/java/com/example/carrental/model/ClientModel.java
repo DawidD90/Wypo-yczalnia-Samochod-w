@@ -33,9 +33,8 @@ public class ClientModel {
     @OneToMany(mappedBy="clientModel")
  private List<ReservationModel> reservationModel;
 
- @OneToOne(mappedBy = "clientModel")
+ @OneToOne
+ @JoinColumn(name = "clientModel_id")
  private RegistrationModel registrationModel;
-
-
 }
 
