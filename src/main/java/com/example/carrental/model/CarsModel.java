@@ -53,4 +53,5 @@ private Set<ReservationModel> reservationModel = new HashSet<>();
     @JoinColumn(name = "BranchModel_id")
     private BranchModel branchModel;
 
+
 }

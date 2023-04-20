@@ -1,9 +1,8 @@
 package com.example.carrental.service;
 
+import com.example.carrental.model.BranchModel;
 import com.example.carrental.model.CarsModel;
-import com.example.carrental.model.StatisticsModel;
 import com.example.carrental.repository.CarsRepository;
-import com.example.carrental.repository.StatisticsRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
@@ -34,14 +33,31 @@ public class CarsService {
         carsRepository.deleteById(id);
     }
 
-    public CarsModel getCarsById(Long id) {
-        Optional<CarsModel> car = carsRepository.findById(id);
-        if(car.isPresent()){
+//    public void findCarsModelsByBranchModelAndCarStatus(String address){
+//
+//       return carsRepository.findCarsModelsByBranchModelAndCarStatus();
+//    }
+
+    public CarsModel getCarsById(Long id){
+        Optional<CarsModel> cars = carsRepository.findById(id);
+        if(cars.isPresent()){
             return carsRepository.findById(id).orElse(null);
-        } else {
-            log.info("brak");
+        }else {
+            log.info("nie ma pojazdu o id: {}", id);
             return null;
         }
     }
+
+    public void updateCarStatusById(Long id, String carStatus){
+
+        carsRepository.updateCarStatusById(id, carStatus);
+    }
+
+    public List<CarsModel> findCarsModelsByBranchModel(Long id, String address){
+
+        carsRepository.findCarsModelsByBranchModel(id, address);
+        return null;
+    }
+
 }
 

@@ -6,7 +6,7 @@
         <!-- Page Content-->
         <div class="container-fluid p-0">
 
-            <form method="post" action='<c:url value="/reservation"/>'>
+            <form method="post" action='<c:url value="/Rentacar"/>'>
             <!-- Interests-->
             <section class="resume-section" id="rentACar">
                 <div class="resume-section-content">
@@ -63,36 +63,76 @@
                     </head>
                     <body>
                     <form action="process-form.jsp" method="post">
-                        <label for="name">Date from:</label>
-                        <input type="date" id="name" name="name" required>
+                        <label for="dateFrom">Date from:</label>
+                        <input type="date" id="dateFrom" name="dateFrom" required>
 
-                        <label for="name">Date to:</label>
-                        <input type="date" id="email" name="email" required>
+                        <label for="dateFrom">Date to:</label>
+                        <input type="date" id="dateTo" name="dateTo" required>
 
                         <div class="form-group row">
 
-                        <label for="name">Select a branch:</label>
-                            <select class="form-control" name="branchModel.id">
-                                <option hidden>Select a branch </option>
-                                <c:forEach items="${branchModel}" var="example">
-                                <option value="${example.id}">${example.address}</option>
-                            </c:forEach>
-                            </select>
-
-                        <section>
-                            <br>
-                        <button type="submit">Submit</button>
-                            <br>
-                        </section>
-                    </form>
-                    </body>
-                    </html>
+                             <label for="dateFrom">Select a branch:</label>
+                                    <select id="branchAddress" class="form-control" name="branchModel.id">
 
 
+                                      <option hidden>Select a branch </option>
+                                      <c:forEach items="${branchModel}" var="example">
+                                        <option value="${example.id}">${example.address}</option>
+                                      </c:forEach>
+                                    </select>
+
+                                <section>
+                                 <a id="carsLink" type="submit" class="btn btn-success">
+                                <span class="icon text-white-50">
+                                 <i class="fas fa-info-circle"></i>
+                                 </span>
+                                <span class="text">Submit</span>
+                            </a>
+                             </section>
+                            <script>
+                                var select = document.getElementById("branchAddress");
+                                var link = document.getElementById("carsLink");
+
+
+                                select.addEventListener("change", function() {
+                                    var selectedOption = select.options[select.selectedIndex];
+                                    var url = "<c:url value='/Rentacar/RentAvailableCar/" + selectedOption.value + "'/>";
+                                    link.href = url;
+                                });
+                            </script>
+
+                         </form>
 
                 </div>
             </section>
-            </form>
+
+
+                <div class="container-fluid p-0">
+
+
+                    <section class="resume-section" id="reservationList">
+                        <div class="resume-section-content">
+                            <h2 class="mb-5">Our reservation list</h2>
+
+                            <c:forEach items="${reservationModels}" var="reservation">
+                            <table>
+
+                                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                                    <div class="flex-grow-1">
+                                        <h3 class="mb-0">Date of reservation: ${reservation.reservationFrom}  ${reservation.reservationTo}</h3>
+                                        <div class="subheading mb-3">Client: ${reservation.client}</div>
+                                        <div class="subheading mb-3">Car: ${reservation.car}</div>
+                                        <div class="subheading mb-3">Production Year: ${reservation.branchmodel}</div>
+
+                                    </div>
+
+                            </table>
+                            </c:forEach>
+                    </section>
+                </div>
+                </form>
+
+
         </div>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
