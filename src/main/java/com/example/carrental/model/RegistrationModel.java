@@ -24,6 +24,6 @@ public class RegistrationModel {
     @Column(name = "password")
     private String password;
 
-    @OneToOne(mappedBy = "registrationModel")
-    private ClientModel clientModel ;
+//    @OneToOne(mappedBy = "registrationModel")
+//    private ClientModel clientModel ;
 }

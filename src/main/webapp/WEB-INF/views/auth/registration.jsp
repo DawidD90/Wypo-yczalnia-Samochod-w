@@ -18,45 +18,29 @@
                         <div class="text-center">
                             <h1 class="h4 text-gray-900 mb-4">Create an account!</h1>
                         </div>
-                        <form method="post" action='<c:url value="registration.jsp"/>'>
+
+                        <div class="container">
+                        <form method="post" action='<c:url value="/registration"/>'>
                             <div class="form-group row">
-                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="text" class="form-control form-control-user" id="exampleFirstName" placeholder="Name">
+                                <label class="col-2" for="exampleFormControlInput1">username</label>
+                                <div class="col-10">
+                                    <input type="text" class="form-control" id="exampleFormControlInput1" name="username" placeholder="Please provide your username">
                                 </div>
-
-                                <div class="col-sm-6">
-                                    <input type="text" class="form-control form-control-user" id="exampleLastName" placeholder="Surname">
-                                </div>
-
                             </div>
-                            <br>
-                            <div class="form-group">
-                                <input type="email" class="form-control form-control-user" id="exampleInputEmail" placeholder="Enter e-mail address">
-                            </div>
-                            <br>
-                            <div class="col-sm-6">
-                                <input type="Username" class="form-control form-control-user" id="exampleUsername" placeholder="please provide your username">
-                            </div>
-                            <br>
                             <div class="form-group row">
-                                <div class="col-sm-6 mb-3 mb-sm-0">
-                                    <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
+                                <label class="col-2" for="exampleFormControlInput1">Make</label>
+                                <div class="col-10">
+                                    <input type="text" class="form-control" id="exampleFormControlInput2" name="password" placeholder="please provide your password">
                                 </div>
-
-                                <div class="col-sm-6">
-                                    <input type="password" class="form-control form-control-user" id="exampleRepeatPassword" placeholder="Repeat password">
-                                </div>
+                                <input type="submit" class="btn btn-success" value="Save">
                             </div>
-                            <br>
+                            </div>
 
-                            <a href="login.jsp" class="btn btn-primary btn-user btn-block">
-                                Register
-                            </a>
-                            <hr>
+
 
                         </form>
                         <div class="text-center">
-                            <a class="small" href="login.jsp">already have an account?Log in!</a>
+                            <a class="small" href="<c:url value="/login"/>">already have an account?Log in!</a>
                         </div>
                     </div>
                 </div>
