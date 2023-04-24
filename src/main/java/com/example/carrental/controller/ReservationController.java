@@ -67,6 +67,7 @@ public class ReservationController {
         reservationModel.setReservationFrom(dateFrom);
         reservationModel.setCarsModel(carsService.getCarsById(id));
         reservationModel.setReservationDate(LocalDate.now());
+
         ModelAndView modelAndView = new ModelAndView("Rentacar/reservation");
         modelAndView.addObject("carsByBranch", id);
         modelAndView.addObject("dateFrom", dateFrom);
