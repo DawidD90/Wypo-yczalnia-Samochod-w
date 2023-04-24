@@ -92,11 +92,14 @@
                             <script>
                                 var select = document.getElementById("branchAddress");
                                 var link = document.getElementById("carsLink");
+                                var dateFrom = document.getElementById("dateFrom");
+                                var dateTo = document.getElementById("dateTo");
 
 
                                 select.addEventListener("change", function() {
                                     var selectedOption = select.options[select.selectedIndex];
-                                    var url = "<c:url value='/Rentacar/RentAvailableCar/" + selectedOption.value + "'/>";
+                                    console.log(dateFrom);
+                                    var url = "<c:url value='/Rentacar/RentAvailableCar/" + selectedOption.value + "/" + dateFrom.value + "/" + dateTo.value + "'/>";
                                     link.href = url;
                                 });
                             </script>

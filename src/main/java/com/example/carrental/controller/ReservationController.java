@@ -5,6 +5,7 @@ import com.example.carrental.service.BranchService;
 import com.example.carrental.service.CarsService;
 import com.example.carrental.service.ReservationService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -12,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 import javax.servlet.http.HttpServletRequest;
+import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -41,20 +43,29 @@ public class ReservationController {
 //        return new RedirectView("Rentacar/RentAvailableCar");
 //    }
 
-    @GetMapping("/RentAvailableCar/{id}")
-    public ModelAndView getCarsByBranch(@PathVariable("id") Long id) {
+    @GetMapping("/RentAvailableCar/{id}/{dateFrom}/{dateTo}")
+    public ModelAndView getCarsByBranch(@PathVariable("id") Long id,
+                                        @PathVariable("dateFrom") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dateFrom,
+                                        @PathVariable("dateTo") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dateTo) {
         List<CarsModel> carsByBranch = carsService.getAllCars().stream().filter(car ->
                         car.getBranchModel().getId().equals(id))
-                .collect(Collectors.toList()).stream().filter(car -> car.getCarStatus().equals(CarStatus.AVAIlABLE)).collect(Collectors.toList());
+                .collect(Collectors.toList()).stream().filter(car ->
+                        car.getCarStatus().equals(CarStatus.AVAIlABLE)).collect(Collectors.toList());
         ModelAndView modelAndView = new ModelAndView("/Rentacar/RentAvailableCar");
         modelAndView.addObject("carsByBranch", carsByBranch);
+        modelAndView.addObject("dateFrom", dateFrom);
+        modelAndView.addObject("dateTo", dateTo);
         return modelAndView;
     }
 
-    @PostMapping("/RentAvailableCar")
-    public ModelAndView saveCarAndDate(@RequestParam CarsModel car) {
+    @PostMapping("/RentAvailableCar/{id}/{dateFrom}/{dateTo}")
+    public ModelAndView saveCarAndDate(@PathVariable("id") Long id,
+                                       @PathVariable("dateFrom") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dateFrom,
+                                       @PathVariable("dateTo") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dateTo) {
         ModelAndView modelAndView = new ModelAndView("Rentacar/reservation");
-        modelAndView.addObject("carsByBranch", car);
+        modelAndView.addObject("carsByBranch", id);
+        modelAndView.addObject("dateFrom", dateFrom);
+        modelAndView.addObject("dateTo", dateTo);
         return modelAndView;
     }
 
@@ -64,7 +75,7 @@ public class ReservationController {
 //                car.equals(saveCarAndDate(car))).collect(Collectors.toList());
 //        model.addAttribute("carsByBranch", carsModels);
 //        return "Rentacar/reservation";
-    }
+   // }
 //    @GetMapping("/RentAvailableCar")
 //    public ModelAndView getReservationPanel(@PathVariable("id") Long id) {
 //        List<CarsModel> reservationModels = carsService.getCarsById(id);

@@ -6,7 +6,6 @@
         <!-- Page Content-->
         <div class="container-fluid p-0">
 
-           <form method="post" action='<c:url value="/Rentacar/RentAvailableCar"/>'>
             <!-- Interests-->
             <section class="resume-section" id="rentACar">
                 <div class="resume-section-content">
@@ -28,10 +27,16 @@
                                             <div class="subheading mb-3">Price: ${title.price}</div>
                                         </div>
                                         <!-- Reservation Button -->
-<%--                                        <form method="post" action='<c:url value="/Rentacar/RentAvailableCar"/>'>--%>
+                                        <form id= "${title.id}" method="post" action="<c:url value='/Rentacar/RentAvailableCar/${title.id}/${dateFrom}/${dateTo}'/>">
                                             <input type="submit" value="make" class="btn btn-success">
                                         </form>
+<%--                                        <script>--%>
+<%--                                            var form = document.getElementById(${title.id});--%>
 
+<%--                                                var url = "<c:url value='/Rentacar/RentAvailableCar/${title.id}/${dateFrom}/${dateTo}'/>";--%>
+<%--                                                form.action = url;--%>
+
+<%--                                        </script>--%>
 
                                     </div>
 
