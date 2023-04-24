@@ -123,9 +123,13 @@
                                 <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                                     <div class="flex-grow-1">
                                         <h3 class="mb-0">Date of reservation: ${reservation.reservationFrom}  ${reservation.reservationTo}</h3>
-                                        <div class="subheading mb-3">Client: ${reservation.client}</div>
-                                        <div class="subheading mb-3">Car: ${reservation.car}</div>
-                                        <div class="subheading mb-3">Production Year: ${reservation.branchmodel}</div>
+                                        <div class="subheading mb-3">Client: ${reservation.clientModel.name} ${reservation.clientModel.surname}</div>
+
+                                        <div class="subheading mb-3">Car: ${reservation.carsModel.make} ${reservation.carsModel.model}</div>
+                                        <div class="subheading mb-3">Car details: ${reservation.carsModel.color} ${reservation.carsModel.bodyType} ${reservation.carsModel.productionYear} </div>
+                                        <div class="subheading mb-3">Cost per day: ${reservation.carsModel.price}</div>
+
+                                        <div class="subheading mb-3">Renting branch: ${reservation.carsModel.branchModel.address}</div>
 
                                     </div>
 

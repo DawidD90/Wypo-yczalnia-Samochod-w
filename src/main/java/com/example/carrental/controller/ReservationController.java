@@ -27,7 +27,7 @@ public class ReservationController {
     private final BranchService branchService;
     private final CarsService carsService;
 
-
+// metoda do wyświetlania listy rezerwacji do zrobienia
     @GetMapping()
     public String getReservationList(Model model) {
         List<BranchModel> branchModels = branchService.getAllBranch();
@@ -67,6 +67,7 @@ public class ReservationController {
         reservationModel.setReservationFrom(dateFrom);
         reservationModel.setCarsModel(carsService.getCarsById(id));
         reservationModel.setReservationDate(LocalDate.now());
+
         ModelAndView modelAndView = new ModelAndView("Rentacar/reservation");
         modelAndView.addObject("carsByBranch", id);
         modelAndView.addObject("dateFrom", dateFrom);
