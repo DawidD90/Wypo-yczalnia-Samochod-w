@@ -34,7 +34,7 @@ public class ClientModel {
  private List<ReservationModel> reservationModel;
 
  @OneToOne
- @JoinColumn(name = "clientModel_id")
+ @JoinColumn(name = "registrationModel_id")
  private RegistrationModel registrationModel;
 }
 
