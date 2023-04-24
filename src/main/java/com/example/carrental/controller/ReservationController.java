@@ -1,8 +1,10 @@
 package com.example.carrental.controller;
 
+import com.example.carrental.config.Auth;
 import com.example.carrental.model.*;
 import com.example.carrental.service.BranchService;
 import com.example.carrental.service.CarsService;
+import com.example.carrental.service.RegistrationService;
 import com.example.carrental.service.ReservationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.imageio.spi.RegisterableService;
 import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDate;
 import java.util.Date;
@@ -26,6 +29,10 @@ public class ReservationController {
     private final ReservationService reservationService;
     private final BranchService branchService;
     private final CarsService carsService;
+
+    private final RegistrationService registrationService;
+
+    private final Auth auth;
 
 // metoda do wyświetlania listy rezerwacji do zrobienia
     @GetMapping()
@@ -61,7 +68,7 @@ public class ReservationController {
     @PostMapping("/RentAvailableCar/{id}/{dateFrom}/{dateTo}")
     public ModelAndView saveCarAndDate(@PathVariable("id") Long id,
                                        @PathVariable("dateFrom") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dateFrom,
-                                       @PathVariable("dateTo") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dateTo) {
+                                       @PathVariable("dateTo") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dateTo) throws Exception {
         ReservationModel reservationModel = new ReservationModel();
         reservationModel.setReservationTo(dateTo);
         reservationModel.setReservationFrom(dateFrom);
@@ -76,6 +83,7 @@ public class ReservationController {
         modelAndView.addObject("reservation", reservationModel);
 
         reservationService.addReservation(reservationModel);
+
 
         return modelAndView;
     }
