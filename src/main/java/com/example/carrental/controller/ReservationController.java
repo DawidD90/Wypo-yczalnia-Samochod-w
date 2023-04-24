@@ -27,7 +27,7 @@ public class ReservationController {
     private final BranchService branchService;
     private final CarsService carsService;
 
-
+// metoda do wyświetlania listy rezerwacji do zrobienia
     @GetMapping()
     public String getReservationList(Model model) {
         List<BranchModel> branchModels = branchService.getAllBranch();
