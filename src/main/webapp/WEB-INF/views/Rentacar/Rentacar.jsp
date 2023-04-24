@@ -59,6 +59,20 @@
                             button[type=submit]:hover {
                                 background-color: #45a049;
                             }
+                            th, td {
+                                border: 1px solid black;
+                                border-radius: 10px;
+                                padding-top: 10px;
+                                padding-bottom: 20px;
+                                padding-left: 20px;
+                                padding-right: 20px;
+
+                            }
+                            tr:nth-child(even) {
+                                background-color: #D6EEEE;
+                            }
+
+
                         </style>
                     </head>
                     <body>
@@ -117,21 +131,51 @@
                         <div class="resume-section-content">
                             <h2 class="mb-5">Our reservation list</h2>
 
+                            <table style="width:100%">
+                            <tr>
+                                <th>Reservation date</th>
+                                <th>Booking period:</th>
+                                <th>Client</th>
+                                <th>Car</th>
+                                <th>Car details</th>
+                                <th>Rent cost</th>
+                                <th>Renting branch</th>
+                            </tr>
+
                             <c:forEach items="${reservationModels}" var="reservation">
-                            <table>
+                            <table style="width:100%">
+                                <tr>
+                                    <th>Reservation date</th>
+                                    <th>Booking period:</th>
+                                    <th>Client</th>
+                                    <th>Car</th>
+                                    <th>Car details</th>
+                                    <th>Rent cost</th>
+                                    <th>Renting branch</th>
+                                </tr>
+                                <tr>
+                                    <th>${reservation.reservationDate} </th>
+                                    <th>${reservation.reservationFrom}  ${reservation.reservationTo}</th>
+                                    <th>${reservation.clientModel.name} ${reservation.clientModel.surname}</th>
+                                    <th>${reservation.carsModel.make} ${reservation.carsModel.model}</th>
+                                    <th>${reservation.carsModel.color} ${reservation.carsModel.bodyType} ${reservation.carsModel.productionYear}</th>
+                                    <th>${reservation.carsModel.price}</th>
+                                    <th> ${reservation.carsModel.branchModel.address}</th>
+                                </tr>
 
-                                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                                    <div class="flex-grow-1">
-                                        <h3 class="mb-0">Date of reservation: ${reservation.reservationFrom}  ${reservation.reservationTo}</h3>
-                                        <div class="subheading mb-3">Client: ${reservation.clientModel.name} ${reservation.clientModel.surname}</div>
 
-                                        <div class="subheading mb-3">Car: ${reservation.carsModel.make} ${reservation.carsModel.model}</div>
-                                        <div class="subheading mb-3">Car details: ${reservation.carsModel.color} ${reservation.carsModel.bodyType} ${reservation.carsModel.productionYear} </div>
-                                        <div class="subheading mb-3">Cost per day: ${reservation.carsModel.price}</div>
+                            <%--                                <div class="d-flex flex-column flex-md-row justify-content-between mb-5">--%>
+<%--                                    <div class="flex-grow-1">--%>
+<%--                                        <h3 class="mb-0">Date of reservation: ${reservation.reservationFrom}  ${reservation.reservationTo}</h3>--%>
+<%--                                        <div class="subheading mb-3">Client: ${reservation.clientModel.name} ${reservation.clientModel.surname}</div>--%>
 
-                                        <div class="subheading mb-3">Renting branch: ${reservation.carsModel.branchModel.address}</div>
+<%--                                        <div class="subheading mb-3">Car: ${reservation.carsModel.make} ${reservation.carsModel.model}</div>--%>
+<%--                                        <div class="subheading mb-3">Car details: ${reservation.carsModel.color} ${reservation.carsModel.bodyType} ${reservation.carsModel.productionYear} </div>--%>
+<%--                                        <div class="subheading mb-3">Cost per day: ${reservation.carsModel.price}</div>--%>
 
-                                    </div>
+<%--                                        <div class="subheading mb-3">Renting branch: ${reservation.carsModel.branchModel.address}</div>--%>
+
+<%--                                    </div>--%>
 
                             </table>
                             </c:forEach>
