@@ -131,16 +131,6 @@
                         <div class="resume-section-content">
                             <h2 class="mb-5">Our reservation list</h2>
 
-                            <table style="width:100%">
-                            <tr>
-                                <th>Reservation date</th>
-                                <th>Booking period:</th>
-                                <th>Client</th>
-                                <th>Car</th>
-                                <th>Car details</th>
-                                <th>Rent cost</th>
-                                <th>Renting branch</th>
-                            </tr>
 
                             <c:forEach items="${reservationModels}" var="reservation">
                             <table style="width:100%">

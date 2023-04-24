@@ -31,7 +31,6 @@
 
                                         </div>
 
-
                                         <!-- Reservation Button -->
 <%--                                        <form method="post" action='<c:url value="/Rentacar/RentAvailableCar"/>'>--%>
                                             <input type="submit" value="make" class="btn btn-success">

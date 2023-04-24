@@ -38,7 +38,7 @@ public class CarsModel {
     @Column(name = "mileage")
     private String mileage;
 
-//tu można enuma zrobić
+    //tu można enuma zrobić
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private CarStatus carStatus;
@@ -46,8 +46,8 @@ public class CarsModel {
     @Column(name = "price")
     private String price;
 
-@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE,mappedBy="carsModel")
-private Set<ReservationModel> reservationModel = new HashSet<>();
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.REMOVE, mappedBy = "carsModel")
+    private Set<ReservationModel> reservationModel = new HashSet<>();
 
     @ManyToOne
     @JoinColumn(name = "BranchModel_id")
