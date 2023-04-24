@@ -32,8 +32,8 @@ public class ReservationController {
     public String getReservationList(Model model) {
         List<BranchModel> branchModels = branchService.getAllBranch();
         model.addAttribute("branchModel", branchModels);
-        List<ReservationModel> reservationModels = reservationService.getAllReservations();
-        model.addAttribute("reservationModels", reservationModels);
+//        List<ReservationModel> reservationModels = reservationService.getAllReservations();
+//        model.addAttribute("reservationModels", reservationModels);
         return "Rentacar/Rentacar";
     }
 
