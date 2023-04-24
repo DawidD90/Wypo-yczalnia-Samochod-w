@@ -32,17 +32,6 @@ protected PasswordEncoder passwordEncoder(){
       http.authorizeRequests()
 
 
-//              .antMatchers("/", "/index").permitAll() // allow access to home page for everyone
-//              .antMatchers("/admin/**").hasRole("ADMIN") // require "ADMIN" role for all "/admin/**" URLs
-//              .anyRequest().authenticated() // require authentication for all other URLs
-//              .and()
-//              .formLogin()
-//              .loginPage("/login") // specify the custom login page URL
-//              .permitAll() // allow access to the login page for everyone
-//              .and()
-//              .logout()
-//              .permitAll(); // allow access to the logout URL for everyone
-
               .antMatchers("/","/index")
               .permitAll()
               .antMatchers("/statistics")

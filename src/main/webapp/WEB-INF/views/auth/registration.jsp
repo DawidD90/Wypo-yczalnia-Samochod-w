@@ -28,13 +28,20 @@
                                 </div>
                             </div>
                             <div class="form-group row">
-                                <label class="col-2" for="exampleFormControlInput1">Make</label>
+                                <label class="col-2" for="exampleFormControlInput2">Make</label>
                                 <div class="col-10">
                                     <input type="text" class="form-control" id="exampleFormControlInput2" name="password" placeholder="please provide your password">
                                 </div>
-                                <input type="submit" class="btn btn-success" value="Save">
+
+                                </form>
+
+
+                                        <input type="submit" class="btn btn-success" value="Save">
+
+
+
                             </div>
-                            </div>
+
 
 
 
@@ -49,4 +56,6 @@
     </div>
 
 </div>
+</div>
+</body>
 </html>
