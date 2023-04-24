@@ -14,8 +14,8 @@ import java.util.List;
 @AllArgsConstructor
 @Entity
 public class ClientModel {
-   @Id
-   @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
 
@@ -30,11 +30,11 @@ public class ClientModel {
     @Column(name = "address")
     private String Address;
 
-    @OneToMany(mappedBy="clientModel")
- private List<ReservationModel> reservationModel;
+    @OneToMany(mappedBy = "clientModel")
+    private List<ReservationModel> reservationModel;
 
- @OneToOne
- @JoinColumn(name = "registrationModel_id")
- private RegistrationModel registrationModel;
+    @OneToOne
+    @JoinColumn(name = "registrationModel_id")
+    private RegistrationModel registrationModel;
 }
 
