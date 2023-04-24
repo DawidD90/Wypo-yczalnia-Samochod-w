@@ -25,5 +25,5 @@ public class RegistrationModel {
     private String password;
 
     @OneToOne(mappedBy = "registrationModel")
-    private ClientModel clientModel ;
+private ClientModel clientModel ;
 }
