@@ -61,7 +61,9 @@ public class ReservationController {
     @PostMapping("/RentAvailableCar/{id}/{dateFrom}/{dateTo}")
     public ModelAndView saveCarAndDate(@PathVariable("id") Long id,
                                        @PathVariable("dateFrom") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dateFrom,
-                                       @PathVariable("dateTo") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dateTo) {
+                                       @PathVariable("dateTo") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dateTo,
+    ReservationModel reservationModel) {
+        reservationService.addReservation(reservationModel);
         ModelAndView modelAndView = new ModelAndView("Rentacar/reservation");
         modelAndView.addObject("carsByBranch", id);
         modelAndView.addObject("dateFrom", dateFrom);

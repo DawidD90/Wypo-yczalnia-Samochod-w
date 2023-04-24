@@ -28,6 +28,7 @@
                                             <div class="subheading mb-3">Status: ${title.carStatus}</div>
                                             <div class="subheading mb-3">Branch: ${title.branchModel.address}</div>
                                             <div class="subheading mb-3">Price: ${title.price}</div>
+                                            <div class="subheading mb-3">Date of reservation: ${dateFrom}, ${dateTo}</div>
                                         </div>
 
 
