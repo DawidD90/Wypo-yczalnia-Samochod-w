@@ -6,29 +6,29 @@
         <!-- Page Content-->
         <div class="container-fluid p-0">
 
-           <form method="post" action='<c:url value="/Rentacar/RentAvailableCar"/>'>
+           <form method="get" action='<c:url value="/Rentacar/reservation"/>'>
             <!-- Interests-->
-            <section class="resume-section" id="rentACar">
+            <section class="resume-section" id="reservation">
                 <div class="resume-section-content">
                     <h1 class="mb-5">Reservation</h1>
 
                     <div class="container-fluid p-0">
                         <!-- Cars-->
-                                <c:forEach items="${carsByBranch}" var="title">
-
 
                                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                                         <div class="flex-grow-1">
-                                            <h3 class="mb-0">Marka: ${title.make}</h3>
-                                            <div class="subheading mb-3">Model: ${title.model}</div>
-                                            <div class="subheading mb-3">Body Type: ${title.bodyType}</div>
-                                            <div class="subheading mb-3">Production Year: ${title.productionYear}</div>
-                                            <div class="subheading mb-3">Color: ${title.color}</div>
-                                            <div class="subheading mb-3">Mileage: ${title.mileage} km</div>
-                                            <div class="subheading mb-3">Status: ${title.carStatus}</div>
-                                            <div class="subheading mb-3">Branch: ${title.branchModel.address}</div>
-                                            <div class="subheading mb-3">Price: ${title.price}</div>
-                                            <div class="subheading mb-3">Date of reservation: ${dateFrom}, ${dateTo}</div>
+                                            <h3 class="mb-0">Marka: ${reservation.carsModel.make}</h3>
+                                            <div class="subheading mb-3">Model: ${reservation.carsModel.model}</div>
+                                            <div class="subheading mb-3">Body Type: ${reservation.carsModel.bodyType}</div>
+                                            <div class="subheading mb-3">Production Year: ${reservation.carsModel.productionYear}</div>
+                                            <div class="subheading mb-3">Color: ${reservation.carsModel.color}</div>
+                                            <div class="subheading mb-3">Mileage: ${reservation.carsModel.mileage} km</div>
+                                            <div class="subheading mb-3">Status: ${reservation.carsModel.carStatus}</div>
+                                            <div class="subheading mb-3">Price: ${reservation.carsModel.price}</div>
+                                            <div class="subheading mb-3">Rent branch: ${reservation.carsModel.branchModel.address}</div>
+                                            <div class="subheading mb-3">booking period: ${dateFrom} - ${dateTo}</div>
+                                            <div class="subheading mb-3">Date of reservation: ${reservationDate}</div>
+
                                         </div>
 
 
@@ -38,7 +38,7 @@
                                         </form>
                                     </div>
                                     </table>
-                                </c:forEach>
+
 
 
 

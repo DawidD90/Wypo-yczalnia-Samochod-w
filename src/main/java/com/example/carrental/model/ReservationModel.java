@@ -7,6 +7,7 @@ import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Getter
@@ -22,28 +23,21 @@ public class ReservationModel {
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "reservation_date")
-    private Date reservationDate;
-
-
-    @Column(name = "client")
-    private String client;
-
-    @Column(name = "car")
-    private String car;
+    private LocalDate reservationDate;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "reservation_from")
-    private Date reservationFrom;
+    private LocalDate reservationFrom;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "reservation_to")
-    private Date reservationTo;
+    private LocalDate reservationTo;
 
-    @Column(name = "rent_branch")
-    private String Branchmodel;
-
-    @Column(name = "return_branch")
-    private String returnBranch;
+//    @Column(name = "rent_branch")
+//    private String Branchmodel;
+//
+//    @Column(name = "return_branch")
+//    private String returnBranch;
 
 
     @Column(name = "sum")

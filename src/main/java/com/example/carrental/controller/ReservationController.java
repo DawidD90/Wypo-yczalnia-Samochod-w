@@ -61,23 +61,31 @@ public class ReservationController {
     @PostMapping("/RentAvailableCar/{id}/{dateFrom}/{dateTo}")
     public ModelAndView saveCarAndDate(@PathVariable("id") Long id,
                                        @PathVariable("dateFrom") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dateFrom,
-                                       @PathVariable("dateTo") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dateTo,
-    ReservationModel reservationModel) {
-        reservationService.addReservation(reservationModel);
+                                       @PathVariable("dateTo") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dateTo) {
+        ReservationModel reservationModel = new ReservationModel();
+        reservationModel.setReservationTo(dateTo);
+        reservationModel.setReservationFrom(dateFrom);
+        reservationModel.setCarsModel(carsService.getCarsById(id));
+        reservationModel.setReservationDate(LocalDate.now());
         ModelAndView modelAndView = new ModelAndView("Rentacar/reservation");
         modelAndView.addObject("carsByBranch", id);
         modelAndView.addObject("dateFrom", dateFrom);
         modelAndView.addObject("dateTo", dateTo);
+        modelAndView.addObject("reservationDate", LocalDate.now());
+        modelAndView.addObject("reservation", reservationModel);
+
+        reservationService.addReservation(reservationModel);
+
         return modelAndView;
     }
 
-//    @GetMapping("/reservation")
-//    public String getReservationPanel(Model model) {
-//        List<CarsModel> carsModels = carsService.getAllCars().stream().filter(car ->
-//                car.equals(saveCarAndDate(car))).collect(Collectors.toList());
-//        model.addAttribute("carsByBranch", carsModels);
-//        return "Rentacar/reservation";
-   // }
+    @GetMapping("/reservation")
+    public String getReservationPanel(Model model) {
+        List<ReservationModel> reservationModels = reservationService.getAllReservations();
+        model.addAttribute("reservation", reservationModels);
+        return "Rentacar/reservation";
+    }
+
 //    @GetMapping("/RentAvailableCar")
 //    public ModelAndView getReservationPanel(@PathVariable("id") Long id) {
 //        List<CarsModel> reservationModels = carsService.getCarsById(id);
