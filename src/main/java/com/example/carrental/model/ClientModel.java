@@ -33,8 +33,8 @@ public class ClientModel {
     @OneToMany(mappedBy = "clientModel")
     private List<ReservationModel> reservationModel;
 
-    @OneToOne
-    @JoinColumn(name = "registrationModel_id")
-    private RegistrationModel registrationModel;
+//    @OneToOne
+//    @JoinColumn(name = "registrationModel_id")
+//    private RegistrationModel registrationModel;
 }
 

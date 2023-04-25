@@ -49,7 +49,7 @@
                 <label class="col-2 col-form-label">Status</label>
                 <div class="col-10">
                     <select class="form-control" name="carStatus">
-                        <option hidden>wybierz</option>
+                        <option hidden>Select</option>
                         <c:forEach items="${carStatus}" var="example">
                             <option value="${example}">${example}</option>
                         </c:forEach>
@@ -58,10 +58,10 @@
             </div>
 
             <div class="form-group row">
-                <label class="col-2 col-form-label">Wybierz oddział</label>
+                <label class="col-2 col-form-label">Branch</label>
                 <div class="col-10">
                     <select class="form-control" name="branchModel.id">
-                        <option hidden>wybierz</option>
+                        <option hidden>Select</option>
                         <c:forEach items="${branchModel}" var="example">
                             <option value="${example.id}">${example.address}</option>
                         </c:forEach>
