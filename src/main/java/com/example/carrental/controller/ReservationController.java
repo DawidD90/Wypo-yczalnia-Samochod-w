@@ -74,14 +74,15 @@ public class ReservationController {
         reservationModel.setCarsModel(carsService.getCarsById(id));
         reservationModel.setReservationDate(LocalDate.now());
 
+        reservationService.addReservation(reservationModel);
+
         ModelAndView modelAndView = new ModelAndView("Rentacar/reservation");
+
 //        modelAndView.addObject("carsByBranch", id);
 //        modelAndView.addObject("dateFrom", dateFrom);
 //        modelAndView.addObject("dateTo", dateTo);
 //        modelAndView.addObject("reservationDate", LocalDate.now());
-        modelAndView.addObject("reservation", reservationModel);
-
-        reservationService.addReservation(reservationModel);
+        modelAndView.addObject("reservationList", List.of(reservationModel));
 
 
         return modelAndView;
@@ -90,7 +91,7 @@ public class ReservationController {
     @GetMapping("/reservation")
     public String getReservationPanel(Model model) {
         List<ReservationModel> reservationModels = reservationService.getAllReservations();
-        model.addAttribute("reservation", reservationModels);
+        model.addAttribute("reservationList", reservationModels);
         return "Rentacar/reservation";
     }
 

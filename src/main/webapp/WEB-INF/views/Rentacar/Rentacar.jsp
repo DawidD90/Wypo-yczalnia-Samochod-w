@@ -145,7 +145,7 @@
                                 </tr>
                                 <tr>
                                     <th>${reservation.reservationDate} </th>
-                                    <th>${reservation.reservationFrom}  ${reservation.reservationTo}</th>
+                                    <th>${reservation.reservationFrom} - ${reservation.reservationTo}</th>
                                     <th>${reservation.clientModel.name} ${reservation.clientModel.surname}</th>
                                     <th>${reservation.carsModel.make} ${reservation.carsModel.model}</th>
                                     <th>${reservation.carsModel.color} ${reservation.carsModel.bodyType} ${reservation.carsModel.productionYear}</th>
