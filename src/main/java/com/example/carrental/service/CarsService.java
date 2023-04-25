@@ -1,6 +1,5 @@
 package com.example.carrental.service;
 
-import com.example.carrental.model.BranchModel;
 import com.example.carrental.model.CarsModel;
 import com.example.carrental.repository.CarsRepository;
 import lombok.RequiredArgsConstructor;
@@ -21,8 +20,9 @@ public class CarsService {
         return carsRepository.findAll();
     }
 
-    public void addCars(CarsModel carsModel){
+    public CarsModel addCars(CarsModel carsModel){
         carsRepository.save(carsModel);
+        return carsModel;
     }
 
     public void saveEditCars(CarsModel editCarsModel) {
