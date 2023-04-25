@@ -54,7 +54,7 @@
                     <span class="icon text-white-50">
                       <i class="fas fa-info-circle"></i>
                     </span>
-            <span class="text">Dodaj nowego</span>
+            <span class="text">Add new Employee</span>
         </a>
 </security:authorize>
 
