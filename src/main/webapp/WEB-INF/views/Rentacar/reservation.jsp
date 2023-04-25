@@ -14,7 +14,7 @@
 
                     <div class="container-fluid p-0">
                         <!-- Cars-->
-
+                        <c:forEach items="${reservationList}" var="reservation">
                                     <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
                                         <div class="flex-grow-1">
                                             <h3 class="mb-0">Marka: ${reservation.carsModel.make}</h3>
@@ -26,18 +26,17 @@
                                             <div class="subheading mb-3">Status: ${reservation.carsModel.carStatus}</div>
                                             <div class="subheading mb-3">Price: ${reservation.carsModel.price}</div>
                                             <div class="subheading mb-3">Rent branch: ${reservation.carsModel.branchModel.address}</div>
-                                            <div class="subheading mb-3">booking period: ${dateFrom} - ${dateTo}</div>
-                                            <div class="subheading mb-3">Date of reservation: ${reservationDate}</div>
+<%--                                            <div class="subheading mb-3">Booking period: ${dateFrom} - ${dateTo}</div>--%>
+                                            <div class="subheading mb-3">Date of reservation: ${reservation.reservationDate}</div>
 
                                         </div>
 
-
                                         <!-- Reservation Button -->
-<%--                                        <form method="post" action='<c:url value="/Rentacar/RentAvailableCar"/>'>--%>
+                                        <form method="post" action='<c:url value="/Rentacar/reservation"/>'>
                                             <input type="submit" value="make" class="btn btn-success">
                                         </form>
                                     </div>
-                                    </table>
+                        </c:forEach>
 
 
 

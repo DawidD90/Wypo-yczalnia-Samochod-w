@@ -56,8 +56,7 @@ public class ReservationController {
                                         @PathVariable("dateTo") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dateTo) {
         List<CarsModel> carsByBranch = carsService.getAllCars().stream().filter(car ->
                         car.getBranchModel().getId().equals(id))
-                .collect(Collectors.toList()).stream().filter(car ->
-                        car.getCarStatus().equals(CarStatus.AVAIlABLE)).collect(Collectors.toList());
+                .collect(Collectors.toList()).stream().filter(car -> car.getCarStatus().equals(CarStatus.AVAIlABLE)).collect(Collectors.toList());
         ModelAndView modelAndView = new ModelAndView("/Rentacar/RentAvailableCar");
         modelAndView.addObject("carsByBranch", carsByBranch);
         modelAndView.addObject("dateFrom", dateFrom);
@@ -68,21 +67,22 @@ public class ReservationController {
     @PostMapping("/RentAvailableCar/{id}/{dateFrom}/{dateTo}")
     public ModelAndView saveCarAndDate(@PathVariable("id") Long id,
                                        @PathVariable("dateFrom") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dateFrom,
-                                       @PathVariable("dateTo") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dateTo) throws Exception {
+                                       @PathVariable("dateTo") @DateTimeFormat(pattern = "yyyy-MM-dd") LocalDate dateTo) {
         ReservationModel reservationModel = new ReservationModel();
         reservationModel.setReservationTo(dateTo);
         reservationModel.setReservationFrom(dateFrom);
         reservationModel.setCarsModel(carsService.getCarsById(id));
         reservationModel.setReservationDate(LocalDate.now());
 
-        ModelAndView modelAndView = new ModelAndView("Rentacar/reservation");
-        modelAndView.addObject("carsByBranch", id);
-        modelAndView.addObject("dateFrom", dateFrom);
-        modelAndView.addObject("dateTo", dateTo);
-        modelAndView.addObject("reservationDate", LocalDate.now());
-        modelAndView.addObject("reservation", reservationModel);
-
         reservationService.addReservation(reservationModel);
+
+        ModelAndView modelAndView = new ModelAndView("Rentacar/reservation");
+
+//        modelAndView.addObject("carsByBranch", id);
+//        modelAndView.addObject("dateFrom", dateFrom);
+//        modelAndView.addObject("dateTo", dateTo);
+//        modelAndView.addObject("reservationDate", LocalDate.now());
+        modelAndView.addObject("reservationList", List.of(reservationModel));
 
 
         return modelAndView;
@@ -91,7 +91,7 @@ public class ReservationController {
     @GetMapping("/reservation")
     public String getReservationPanel(Model model) {
         List<ReservationModel> reservationModels = reservationService.getAllReservations();
-        model.addAttribute("reservation", reservationModels);
+        model.addAttribute("reservationList", reservationModels);
         return "Rentacar/reservation";
     }
 
