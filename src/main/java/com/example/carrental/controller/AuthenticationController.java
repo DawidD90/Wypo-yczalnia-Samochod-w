@@ -18,7 +18,7 @@ public class AuthenticationController {
         return "auth/login";
     }
 
-
+//    /s/
 
 //    @GetMapping("/registration")
 //    public String getAddRegistration(Model model) {
