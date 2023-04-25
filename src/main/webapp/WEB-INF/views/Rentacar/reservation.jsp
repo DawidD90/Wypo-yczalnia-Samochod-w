@@ -26,7 +26,7 @@
                                             <div class="subheading mb-3">Status: ${reservation.carsModel.carStatus}</div>
                                             <div class="subheading mb-3">Price: ${reservation.carsModel.price}</div>
                                             <div class="subheading mb-3">Rent branch: ${reservation.carsModel.branchModel.address}</div>
-<%--                                            <div class="subheading mb-3">Booking period: ${dateFrom} - ${dateTo}</div>--%>
+                                            <div class="subheading mb-3">Booking period: ${dateFrom} - ${dateTo}</div>
                                             <div class="subheading mb-3">Date of reservation: ${reservation.reservationDate}</div>
 
                                         </div>

@@ -9,31 +9,31 @@
         <div class="container">
             <form method="post" action='<c:url value="/employees"/>'>
                 <div class="form-group row">
-                    <label class="col-2" for="exampleFormControlInput1">Imie</label>
+                    <label class="col-2" for="exampleFormControlInput1">Name</label>
                     <div class="col-10">
-                        <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="uzupełnij name">
+                        <input type="text" class="form-control" id="exampleFormControlInput1" name="name" placeholder="add name">
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label class="col-2" for="exampleFormControlInput2">Nazwisko</label>
+                    <label class="col-2" for="exampleFormControlInput2">Surname</label>
                     <div class="col-10">
-                        <input type="text" class="form-control" id="exampleFormControlInput2" name="surname" placeholder="uzupełnij surname">
+                        <input type="text" class="form-control" id="exampleFormControlInput2" name="surname" placeholder="add surname">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label class="col-2" for="exampleFormControlInput3">position</label>
                     <div class="col-10">
-                        <textarea type="text" class="form-control" rows="5" id="exampleFormControlInput3" name="position" placeholder="uzupełnij position"></textarea>
+                        <textarea type="text" class="form-control" rows="5" id="exampleFormControlInput3" name="position" placeholder="add position"></textarea>
                     </div>
                 </div>
 
                 <div class="form-group row">
-                    <label class="col-2 col-form-label">Wybierz oddział</label>
+                    <label class="col-2 col-form-label">Select Branch</label>
                     <div class="col-10">
                         <select class="form-control" name="branchModel.id">
-                            <option hidden>wybierz</option>
+                            <option hidden>Select</option>
                             <c:forEach items="${branchModel}" var="example">
                                 <option value="${example.id}">${example.address}</option>
                             </c:forEach>
@@ -42,7 +42,7 @@
                 </div>
 
 
-                <input class="btn btn-success pull-left" type="submit" value="Zapisz" id="searchButton"></input>
+                <input class="btn btn-success pull-left" type="submit" value="Save" id="searchButton"></input>
 
             </form>
         </div>
