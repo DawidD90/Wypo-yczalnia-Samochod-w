@@ -11,22 +11,23 @@
         <div class="resume-section-content">
             <h2 class="mb-5">Cars</h2>
 <c:forEach items="${carsModel}" var="title">
-            <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
-                <div class="flex-grow-1">
+            <div class="d-flex flex-column flex-md-row justify-content-between mb-3">
+
+                <div class="flex-grow-3">
                     <h3 class="mb-0">Make: ${title.make}</h3>
-                    <div class="subheading mb-3">Model: ${title.model}</div>
-                    <div class="subheading mb-3">Body Type: ${title.bodyType}</div>
-                    <div class="subheading mb-3">Production Year: ${title.productionYear}</div>
-                    <div class="subheading mb-3">Color: ${title.color}</div>
-                    <div class="subheading mb-3">Mileage: ${title.mileage} km</div>
-                    <div class="subheading mb-3">Status: ${title.carStatus}</div>
-                    <div class="subheading mb-3">Branch: ${title.branchModel.address}</div>
-                    <div class="subheading mb-3">Price: ${title.price}</div>
+                    <p class="subheading mb-1 s">Model: ${title.model}</p>
+                    <div class="subheading mb-1">Body Type: ${title.bodyType}</div>
+                    <div class="subheading mb-1">Production Year: ${title.productionYear}</div>
+                    <div class="subheading mb-1">Color: ${title.color}</div>
+                    <div class="subheading mb-1">Mileage: ${title.mileage} km</div>
+                    <div class="subheading mb-1">Status: ${title.carStatus}</div>
+                    <div class="subheading mb-1">Branch: ${title.branchModel.address}</div>
+                    <div class="subheading mb-1">Price: ${title.price} zł/per day</div>
                 </div>
                 <security:authorize access="hasAnyRole('ROLE_Admin')">
                 <!-- Delete Button -->
                 <form method="post" action='<c:url value="/cars/${title.id}"/>'>
-                    <input type="submit" value="usuń" class="btn btn-danger">
+                    <input type="submit" value="Delete" class="btn btn-danger">
                 </form>
                 </security:authorize>
             </div>

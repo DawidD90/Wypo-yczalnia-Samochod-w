@@ -11,27 +11,32 @@
             <section class="resume-section" id="clients">
                 <div class="resume-section-content">
                     <h2 class="mb-5">Our Clients</h2>
+                    <h3>
+
                     <c:forEach items="${clientModel}" var="title">
                         <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                            <div>
                             <div class="flex-grow-1">
                                 <h3 class="mb-0">client name: ${title.name}</h3>
                                 <div class="subheading mb-3">client surname: ${title.surname}</div>
                                 <div class="subheading mb-3">email: ${title.email}</div>
                                 <div class="subheading mb-3">address: ${title.address}</div>
 
+                                <form method="post" action='<c:url value="/client/${title.id}"/>'>
+                                    <input type="submit" value="Delete" class="btn btn-danger">
+
+                                </form>
                             </div>
 
                             <!-- Delete Button -->
-                            <form method="post" action='<c:url value="/client/${title.id}"/>'>
-                                <input type="submit" value="usuń" class="btn btn-danger">
 
-                            </form>
 
                              </c:forEach>
+                            </div>
                         </div>
+                    </h3>
 
-
-
+<h4>
                             <div class="container">
                                 <form method="post" action='<c:url value="/client"/>'>
                                     <div class="form-group row">
@@ -64,10 +69,10 @@
                                     </div>
 
 
-                                    <input type="submit" class="btn btn-success" value="Zapisz">
+                                    <input type="submit" class="btn btn-success" value="Save">
                                 </form>
                             </div>
-
+</h4>
 
 
             </section>
