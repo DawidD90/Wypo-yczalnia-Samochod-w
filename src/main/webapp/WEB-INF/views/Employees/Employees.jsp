@@ -31,7 +31,7 @@
 
 
                 <form method="post" action='<c:url value="/employees/${title.id}"/>'>
-                    <input type="submit" value="usuń" class="btn btn-danger">
+                    <input type="submit" value="Delete" class="btn btn-danger">
                 </form>
                 </security:authorize>
 
