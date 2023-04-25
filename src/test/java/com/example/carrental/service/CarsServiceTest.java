@@ -15,6 +15,7 @@ import static org.mockito.Mockito.when;
 @RunWith(MockitoJUnitRunner.class)
 public class CarsServiceTest {
 
+
     @Mock
     private CarsRepository carsRepository;
 
@@ -42,5 +43,7 @@ public class CarsServiceTest {
         Assertions.assertEquals("500", carsModel.getMileage());
         Assertions.assertEquals("Toyota", carsModel.getMake());
     }
+
+
 
 }
